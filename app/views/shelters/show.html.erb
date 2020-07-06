@@ -1,0 +1,19 @@
+<main>
+  <section class='page-options'>
+    <h2 class='page-title'><%= @shelter.name %></h2>
+    <%= link_to 'See Pets', "/shelters/#{@shelter.id}/pets" %>
+  </section>
+  <section id='show-shelter'>
+    <div class="shelter-details">
+        <p><%= @shelter.address %><br>
+          <%= @shelter.city %>, <%= @shelter.state %><br>
+          <%= @shelter.zip %>
+        </p>
+    </div>
+
+    <div class='options'>
+      <%= link_to 'Update', "/shelters/#{@shelter.id}/edit" %>
+      <%= link_to 'Delete', "/shelters/#{@shelter.id}", method: :delete %>
+    </div>
+  </section>
+</main>

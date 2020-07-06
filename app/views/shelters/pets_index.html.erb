@@ -1,0 +1,25 @@
+<main>
+  <section class='page-options'>
+    <h2 class='page-title'>Available Pets: <%= link_to "#{@shelter.name}", "/shelters/#{@shelter.id}" %> <small>(<%= @pets.count %> pets)</small></h2>
+    <%= link_to 'Create Pet', "/shelters/#{@shelter.id}/pets/new" %>
+  </section>
+
+  <section id='pets-index'>
+    <% @pets.each do |pet| %>
+      <div class='pet-card'>
+        <%= image_tag(pet.image, alt: "photo of pet", method: :get) %>
+
+        <div class='pet-details'
+          <a><%= link_to "#{pet.name}", "/pets/#{pet.id}", class: 'pet-name' %></a>
+          <p><%= pet.approx_age %> year(s), <%= pet.sex %></p>
+          <p><%= link_to "#{pet.shelter.name}", "/shelters/#{pet.shelter.id}", class: 'pet-shelter' %></p>
+        </div>
+
+        <div class='options'>
+          <%= link_to 'Update', "/pets/#{pet.id}/edit" %>
+          <%= link_to 'Delete', "/pets/#{pet.id}", method: :delete %>
+        </div>
+      </div>
+    <% end %>
+  </section>
+</main>

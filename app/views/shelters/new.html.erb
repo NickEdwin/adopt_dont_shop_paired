@@ -1,0 +1,15 @@
+<main>
+  <section class='page-options'>
+    <h2 class='page-title'>Add New Shelter</h2>
+  </section>
+  <section>
+    <%= form_tag '/shelters', class: 'edit-form' do %>
+      <%= text_field_tag :name, 'Name' %><br>
+      <%= text_field_tag :address, 'Address' %><br>
+      <%= text_field_tag :city, 'City' %><br>
+      <%= text_field_tag :state, 'State' %><br>
+      <%= text_field_tag :zip, 'Zip Code' %><br>
+      <%= submit_tag 'Add Shelter', class: 'submit' %>
+    <% end %>
+  </section>
+</main>

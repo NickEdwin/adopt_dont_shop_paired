@@ -1,0 +1,256 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  text-decoration: none;
+}
+
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+  color: #444;
+}
+
+a {
+  color: #444;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  background-color: #f1f1f1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+header {
+  align-self: center;
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 40px 40px 40px 40px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0px 10px 0px;
+}
+
+#main-nav {
+  display: flex;
+  justify-content: flex-end;
+  /* background-color: #fff; */
+}
+
+#main-nav a {
+  padding: 0px 0px 0px 30px;
+  font-weight: 600;
+  /* opacity: 60%; */
+}
+
+main {
+  width: 60%;
+  align-self: center;
+}
+
+.page-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 30px;
+  padding-bottom: 8px;
+  /* border-bottom: 1px solid #ddd; */
+}
+
+.page-options {
+  margin: 10px 0px 30px 0px;
+  color: #9900CC;
+}
+
+.page-options a {
+  color: #9900CC;
+}
+
+.page-options strong {
+  font-weight: 600;
+}
+
+.page-options small {
+	/* font-style: italic; */
+	font-weight: 200;
+	font-size: .6em;
+	opacity: 70%;
+}
+
+#shelter-index div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0 20px 0px;
+}
+
+.options {
+  font-size: .8em;
+  opacity: 70%;
+}
+
+.options a:hover {
+  color: #9900CC;
+}
+
+#pets-index {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.pet-card {
+  min-width: 240px;
+	width: auto;
+  max-width: 240px;
+  margin: 0px 10px 15px 0px;
+  background-color: #fff;
+  border-radius: 8px;
+  /* border: 1px solid #ddd; */
+}
+
+.pet-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.pet-details {
+  padding: 15px 15px 5px 20px;
+
+}
+
+.pet-name {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.pet-details p {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#pets-index .options {
+  /* background-color: red; */
+  margin: 0 15px 15px 5px;
+  text-align: right;
+}
+
+#pets-index .options a {
+  padding-left: 15px;
+}
+
+.edit-form {
+  margin-bottom: 100px;
+}
+
+.edit-form input {
+  width: 70%;
+  padding: 10px;
+  border-style: hidden;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  outline: none;
+  box-sizing: border-box;
+  color: #777;
+  /* transition: width 0.4s ease-in-out; */
+  font-size: 1em;
+}
+
+.edit-form input:focus {
+  /* width: 60%; */
+  color: #9900CC;
+}
+
+.edit-form label {
+  font-size: .8em;
+  display: block;
+  margin-left: 8px;
+  margin-bottom: -10px;
+}
+
+.edit-form .submit {
+  background-color: #9900CC;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.shelter-details p {
+  line-height: 22px;
+}
+
+#show-shelter .options {
+  margin: 20px 0 0 0px;
+}
+
+#show-shelter .options a {
+  margin-right: 10px;
+}
+
+.pet-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+#pet-detail p {
+  line-height: 22px;
+}
+
+#pet-detail .options {
+  margin: 20px 0 100px 0;
+}
+
+#pet-detail .options a {
+  padding-right: 15px;
+}

@@ -1,0 +1,21 @@
+
+<main>
+  <section class='page-options'>
+    <h2 class='page-title'>Update Shelter: <%= @shelter.name %></h2>
+  </section>
+  <section>
+    <%= form_tag "/shelters/#{@shelter.id}", method: :patch, class: 'edit-form' do %>
+      <%= label_tag :name %><br>
+      <%= text_field_tag :name, @shelter.name %><br>
+      <%= label_tag :address %><br>
+      <%= text_field_tag :address, @shelter.address %><br>
+      <%= label_tag :city %><br>
+      <%= text_field_tag :city, @shelter.city %><br>
+      <%= label_tag :state %><br>
+      <%= text_field_tag :state, @shelter.state %><br>
+      <%= label_tag :zip %><br>
+      <%= text_field_tag :zip, @shelter.zip %><br>
+      <%= submit_tag 'Save', class: 'submit' %>
+    <% end %>
+  </section>
+</main>

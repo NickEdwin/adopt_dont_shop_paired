@@ -1,0 +1,21 @@
+
+<main>
+  <section class='page-options'>
+    <h2 class='page-title'><%= @pet.name %></h2>
+    <span>status: <strong><%= @pet.status %></strong></span>
+  </section>
+  <section id='pet-detail'>
+
+    <%= image_tag(@pet.image, alt: "photo of pet", method: :get, class: 'pet-image') %>
+
+
+    <p><%= @pet.approx_age %> year(s), <%= @pet.sex %><br>
+    <%= @pet.description %></p>
+
+    <div class='options'>
+      <%= link_to 'Update', "/pets/#{@pet.id}/edit" %>
+      <%= link_to 'Delete', "/pets/#{@pet.id}", method: :delete %>
+    </div>
+
+  </section>
+</main>
