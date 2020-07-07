@@ -106,7 +106,7 @@ Each review will have:
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 3, Shelter Review Creation
 
