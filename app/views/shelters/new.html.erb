@@ -4,11 +4,11 @@
   </section>
   <section>
     <%= form_tag '/shelters', class: 'edit-form' do %>
-      <%= text_field_tag :name, 'Name' %><br>
-      <%= text_field_tag :address, 'Address' %><br>
-      <%= text_field_tag :city, 'City' %><br>
-      <%= text_field_tag :state, 'State' %><br>
-      <%= text_field_tag :zip, 'Zip Code' %><br>
+      <%= text_field_tag :name, nil, placeholder: 'Name' %><br>
+      <%= text_field_tag :address, nil, placeholder: 'Address' %><br>
+      <%= text_field_tag :city, nil, placeholder: 'City' %><br>
+      <%= text_field_tag :state, placeholder: 'State' %><br>
+      <%= text_field_tag :zip, placeholder: 'Zip Code' %><br>
       <%= submit_tag 'Add Shelter', class: 'submit' %>
     <% end %>
   </section>
