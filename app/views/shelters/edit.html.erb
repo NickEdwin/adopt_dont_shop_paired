@@ -3,6 +3,14 @@
     <h2 class='page-title'>Update Shelter: <%= @shelter.name %></h2>
   </section>
   <section>
+    <div id="flash-alert">
+      <% if !!flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <p><%= error %></p>
+        <% end %>
+      <% end %>
+    </div>
+    
     <%= form_tag "/shelters/#{@shelter.id}", method: :patch, class: 'edit-form' do %>
       <%= label_tag :name %><br>
       <%= text_field_tag :name, @shelter.name, placeholder: 'Name' %><br>
