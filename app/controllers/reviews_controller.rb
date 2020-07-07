@@ -6,6 +6,8 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @review = Review.find(params[:id])
+    @shelter = @review.shelter
   end
 
   def create
@@ -18,6 +20,13 @@ class ReviewsController < ApplicationController
       flash[:errors] = review.errors.full_messages
       redirect_to "/shelters/#{shelter.id}/reviews/new"
     end
+  end
+
+  def update
+    shelter = Review.find(params[:id]).shelter
+    @review = Review.find(params[:id])
+    @review.update(review_params)
+    redirect_to "/shelters/#{shelter.id}"
   end
 
   private

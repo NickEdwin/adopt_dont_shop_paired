@@ -228,6 +228,9 @@
           null,
           1,
           1,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -441,7 +444,7 @@
           null
         ]
       },
-      "/Users/gabymendez/turing/2module/projects/adopt_dont_shop_paired/spec/features/reviews/new_spec.rb": {
+
         "lines": [
           1,
           1,
@@ -759,8 +762,8 @@
           null,
           null,
           1,
-          10,
-          10,
+          12,
+          12,
           null,
           null,
           1,
@@ -861,10 +864,6 @@
           null,
           null,
           1,
-          null,
-          null,
-          1,
-          1,
           1,
           1,
           1,
@@ -876,13 +875,27 @@
           null,
           null,
           1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
           1,
           1,
+          2,
           null,
           null
         ]
       }
     },
-    "timestamp": 1594150720
+
+    "timestamp": 1594159476
+
   }
 }
