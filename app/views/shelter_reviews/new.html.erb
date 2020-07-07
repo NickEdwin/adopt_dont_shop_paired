@@ -1,0 +1,14 @@
+<main>
+  <section class='page-options'>
+    <h2 class='page-title'>Write New Review</h2>
+  </section>
+  <section>
+    <%= form_tag "/shelters/#{@shelter.id}", class: 'edit-form' do %>
+      <%= text_field_tag :title, 'Title' %><br>
+      <%= text_field_tag :rating, 'Rate Shelter 0-5' %><br>
+      <%= text_field_tag :content, 'Write your review here.' %><br>
+      <%= text_field_tag :picture, 'Image URL (optional)' %><br>
+      <%= submit_tag 'Save Review', class: 'submit' %>
+    <% end %>
+  </section>
+</main>
