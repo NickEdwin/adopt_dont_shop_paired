@@ -275,3 +275,7 @@ main {
 	object-fit: cover;
 	margin-top: 20px;
 }
+
+#flash-alert {
+	background-color: red;
+}
