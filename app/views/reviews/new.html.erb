@@ -2,11 +2,7 @@
   <section class='page-options'>
     <h2 class='page-title'>Write New Review</h2>
   </section>
-   <% if flash[:alert] %>
-    <div id="flash-alert">
-      <%= flash[:alert] %>
-    </div>
-   <% end %>
+
   <section>
     <%= form_tag "/shelters/#{@shelter.id}", class: 'edit-form' do %>
       <%= text_field_tag :title, 'Title' %><br>
@@ -15,5 +11,12 @@
       <%= text_field_tag :picture, 'Image URL (optional)' %><br>
       <%= submit_tag 'Save Review', class: 'submit' %>
     <% end %>
+
+    <% if flash[:alert] %>
+     <div id="flash-alert">
+       <%= flash[:alert] %>
+     </div>
+    <% end %>
+    
   </section>
 </main>
