@@ -11,11 +11,13 @@
       <%= text_field_tag :picture, 'Image URL (optional)' %><br>
 
       <div id="flash-alert">
+        <% if !!flash[:errors] %>
         <% flash[:errors].each do |error| %>
           <p><%= error %></p>
         <% end %>
+        <% end %>
       </div>
-      
+
       <%= submit_tag 'Save Review', class: 'submit' %>
     <% end %>
   </section>
