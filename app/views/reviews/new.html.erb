@@ -9,7 +9,13 @@
       <%= text_field_tag :rating, 'Rate Shelter 0-5' %><br>
       <%= text_field_tag :content, 'Write your review here.' %><br>
       <%= text_field_tag :picture, 'Image URL (optional)' %><br>
-      <p id="flash-alert"><%= flash.alert %></p>
+
+      <div id="flash-alert">
+        <% flash[:errors].each do |error| %>
+          <p><%= error %></p>
+        <% end %>
+      </div>
+      
       <%= submit_tag 'Save Review', class: 'submit' %>
     <% end %>
   </section>
