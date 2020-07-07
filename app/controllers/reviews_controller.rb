@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-
+  add_flash_types(:errors)
+  
   def new
     @shelter = Shelter.find(params[:id])
   end
