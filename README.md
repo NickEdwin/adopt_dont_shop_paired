@@ -135,7 +135,7 @@ And I'm returned to the new form to create a new review
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 5, Edit a Shelter Review
 
@@ -154,7 +154,7 @@ And I can see my updated review
 ```
 
 ```
-[ ] done
+[/] done
 
 User Story 6, Edit a Shelter Review, cont.
 
