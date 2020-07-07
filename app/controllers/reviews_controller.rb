@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
       review.save
       redirect_to "/shelters/#{shelter.id}"
     else
-      flash[:alert] = "Please fill in Title, Rating, and Review."
+      flash[:errors] = review.errors.full_messages
       redirect_to "/shelters/#{shelter.id}/reviews/new"
     end
   end
