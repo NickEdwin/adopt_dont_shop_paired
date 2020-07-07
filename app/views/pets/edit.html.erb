@@ -5,15 +5,15 @@
   <section>
     <%= form_tag "/pets/#{@pet.id}", method: :patch, class: 'edit-form' do %>
       <%= label_tag :name %><br>
-      <%= text_field_tag :name, @pet.name %><br>
+      <%= text_field_tag :name, @pet.name, placeholder: 'Name' %><br>
       <%= label_tag :approximate_age %><br>
-      <%= text_field_tag :approx_age, @pet.approx_age %><br>
+      <%= text_field_tag :approx_age, @pet.approx_age, placeholder: 'Approximate Age' %><br>
       <%= label_tag :description %><br>
-      <%= text_field_tag :description, @pet.description %><br>
+      <%= text_field_tag :description, @pet.description, placeholder: 'Description' %><br>
       <%= label_tag :sex %><br>
-      <%= text_field_tag :sex, @pet.sex %><br>
+      <%= text_field_tag :sex, @pet.sex, placeholder: 'Sex' %><br>
       <%= label_tag :image %><br>
-      <%= text_field_tag :image, @pet.image %><br>
+      <%= text_field_tag :image, @pet.image, placeholder: 'Image URL' %><br>
       <%= submit_tag 'Save', class: 'submit' %>
     <% end %>
   </section>
