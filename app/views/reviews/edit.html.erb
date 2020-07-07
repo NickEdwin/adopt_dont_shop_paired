@@ -4,20 +4,19 @@
   </section>
 
   <section>
+    <div id="flash-alert">
+      <% if !!flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <p><%= error %></p>
+      <% end %>
+      <% end %>
+    </div>
+
     <%= form_tag "/reviews/#{@review.id}", method: :patch, class: 'edit-form' do %>
-      <%= text_field_tag :title, 'Title' %><br>
-      <%= text_field_tag :rating, 'Rate Shelter 0-5' %><br>
-      <%= text_field_tag :content, 'Write your review here.' %><br>
-      <%= text_field_tag :picture, 'Image URL (optional)' %><br>
-
-      <div id="flash-alert">
-        <% if !!flash[:errors] %>
-          <% flash[:errors].each do |error| %>
-            <p><%= error %></p>
-        <% end %>
-        <% end %>
-      </div>
-
+      <%= text_field_tag :title, @review.title, placeholder: 'Title' %><br>
+      <%= text_field_tag :rating, @review.rating, placeholder: 'Rate Shelter 0-5' %><br>
+      <%= text_field_tag :content, @review.content, placeholder: 'Write your review here.' %><br>
+      <%= text_field_tag :picture, @review.picture, placeholder: 'Image URL (optional)' %><br>
       <%= submit_tag 'Save Review', class: 'submit' %>
     <% end %>
   </section>

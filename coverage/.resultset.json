@@ -444,7 +444,32 @@
           null
         ]
       },
-
+      "/Users/gabymendez/turing/2module/projects/adopt_dont_shop_paired/spec/features/reviews/edit_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/gabymendez/turing/2module/projects/adopt_dont_shop_paired/spec/features/reviews/new_spec.rb": {
         "lines": [
           1,
           1,
@@ -858,11 +883,18 @@
       "/Users/gabymendez/turing/2module/projects/adopt_dont_shop_paired/app/controllers/reviews_controller.rb": {
         "lines": [
           1,
+          1,
           null,
           1,
           2,
           null,
           null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
           1,
           1,
           1,
@@ -875,15 +907,10 @@
           null,
           null,
           1,
-          2,
-          2,
-          2,
-          2,
-          2,
-          null,
-          0,
-          0,
-          null,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           1,
@@ -894,8 +921,6 @@
         ]
       }
     },
-
-    "timestamp": 1594159476
-
+    "timestamp": 1594161728
   }
 }
