@@ -852,7 +852,7 @@
           null
         ]
       },
-      "/Users/gabymendez/turing/2module/projects/adopt_dont_shop_paired/app/controllers/shelter_reviews_controller.rb": {
+      "/Users/gabymendez/turing/2module/projects/adopt_dont_shop_paired/app/controllers/reviews_controller.rb": {
         "lines": [
           1,
           null,
@@ -877,6 +877,6 @@
         ]
       }
     },
-    "timestamp": 1594089002
+    "timestamp": 1594141849
   }
 }
