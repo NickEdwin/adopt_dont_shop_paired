@@ -25,6 +25,6 @@ RSpec.describe "visit /shelters/id", type: :feature do
     expect(page).to have_content(review1.title)
     expect(page).to have_content(review1.rating)
     expect(page).to have_content(review1.content)
-    expect(page).to have_content(review1.picture)
-  end 
+    expect(page).to have_xpath("//img[@src = 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12234558/Chinook-On-White-03.jpg' and @alt='review photo']")
+  end
 end
