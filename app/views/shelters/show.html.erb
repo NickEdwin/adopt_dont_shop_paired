@@ -16,10 +16,16 @@
       <%= link_to 'Delete', "/shelters/#{@shelter.id}", method: :delete %>
     </div>
   </section>
-  <section class="reviews">
+
+  <section id="reviews">
+    <div class='page-options'>
+      <h3 class='page-title'>Reviews</h3>
+      <%= link_to 'Write Review', "/shelters/#{@shelter.id}/reviews/new" %>
+    </div>
+
     <% @reviews.each do |review| %>
     <h4><%= review.title %></h4>
-    <p><%= review.rating %></p>
+    <p><%= review.rating %> / 5</p>
     <p><%= review.content %></p>
     <%= image_tag(review.picture, alt: "review photo", method: :get) %>
     <% end %>

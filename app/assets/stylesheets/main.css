@@ -254,3 +254,24 @@ main {
 #pet-detail .options a {
   padding-right: 15px;
 }
+
+#reviews {
+	margin: 40px 0 30px 0;
+	padding-top: 10px;
+	border-top: 1px solid #ddd;
+}
+
+#reviews h4 {
+	margin-top: 30px;
+}
+
+#reviews p {
+	margin-top: 10px;
+}
+
+#reviews img {
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+	margin-top: 20px;
+}
