@@ -29,6 +29,8 @@
     <p><%= review.content %></p>
     <%= image_tag(review.picture, alt: "review photo", method: :get) %>
     <%= link_to 'Edit Review', "/reviews/#{review.id}/edit" %>
+    <%= link_to 'Delete Review', "/reviews/#{review.id}", method: :delete %>
+
     <% end %>
   </section>
 </main>

@@ -7,7 +7,7 @@ RSpec.describe "destroy existing review", type: :feature do
     visit "/shelters/#{shelter.id}"
     expect(page).to have_content('Best place ever!')
 
-    click_on "Delete"
+    click_on "Delete Review"
     expect(current_path).to eq("/shelters/#{shelter.id}")
 
     expect(page).to_not have_content('Best place ever!')

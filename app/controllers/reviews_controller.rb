@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   add_flash_types(:errors)
-  
+
   def new
     @shelter = Shelter.find(params[:id])
   end
@@ -26,6 +26,12 @@ class ReviewsController < ApplicationController
     shelter = Review.find(params[:id]).shelter
     @review = Review.find(params[:id])
     @review.update(review_params)
+    redirect_to "/shelters/#{shelter.id}"
+  end
+
+  def destroy
+    shelter = Review.find(params[:id]).shelter
+    Review.destroy(params[:id])
     redirect_to "/shelters/#{shelter.id}"
   end
 
