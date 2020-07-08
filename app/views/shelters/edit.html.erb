@@ -1,5 +1,5 @@
 <main>
-  <section class='page-options'>
+  <section class='page-header'>
     <h2 class='page-title'>Update Shelter: <%= @shelter.name %></h2>
   </section>
   <section>
@@ -10,17 +10,12 @@
         <% end %>
       <% end %>
     </div>
-    
+
     <%= form_tag "/shelters/#{@shelter.id}", method: :patch, class: 'edit-form' do %>
-      <%= label_tag :name %><br>
       <%= text_field_tag :name, @shelter.name, placeholder: 'Name' %><br>
-      <%= label_tag :address %><br>
       <%= text_field_tag :address, @shelter.address, placeholder: 'Address' %><br>
-      <%= label_tag :city %><br>
       <%= text_field_tag :city, @shelter.city, placeholder: 'City' %><br>
-      <%= label_tag :state %><br>
       <%= text_field_tag :state, @shelter.state, placeholder: 'State' %><br>
-      <%= label_tag :zip %><br>
       <%= text_field_tag :zip, @shelter.zip, placeholder: 'Zip' %><br>
       <%= submit_tag 'Save', class: 'submit' %>
     <% end %>

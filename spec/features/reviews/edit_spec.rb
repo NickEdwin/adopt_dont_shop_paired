@@ -6,7 +6,10 @@ RSpec.describe "update an existing review", type: :feature do
 
   visit "/shelters/#{shelter.id}"
 
-  click_link "Edit Review"
+  within('#reviews') do
+    click_on "Edit"
+  end
+
   expect(current_path).to eq("/reviews/#{review.id}/edit")
 
   fill_in('title', with: 'Updated Review')
