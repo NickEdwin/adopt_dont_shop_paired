@@ -20,12 +20,11 @@ class SheltersController < ApplicationController
 
   def create
     shelter = Shelter.new(shelter_params)
-    if shelter.valid?
-      shelter.save
+    if shelter.save
       redirect_to "/shelters"
     else
       flash[:errors] = shelter.errors.full_messages
-      redirect_to "/shelters/new"
+      render :new
     end
   end
 

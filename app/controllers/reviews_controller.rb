@@ -13,8 +13,7 @@ class ReviewsController < ApplicationController
   def create
     shelter = Shelter.find(params[:id])
     review = shelter.reviews.new(review_params)
-    if review.valid?
-      review.save
+    if review.save
       redirect_to "/shelters/#{shelter.id}"
     else
       flash[:errors] = review.errors.full_messages
