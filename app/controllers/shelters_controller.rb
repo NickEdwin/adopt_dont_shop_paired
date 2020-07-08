@@ -24,7 +24,7 @@ class SheltersController < ApplicationController
       redirect_to "/shelters"
     else
       flash[:errors] = shelter.errors.full_messages
-      render :new
+      redirect_to "/shelters/new"
     end
   end
 

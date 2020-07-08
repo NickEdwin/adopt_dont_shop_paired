@@ -76,13 +76,15 @@ header {
 #main-nav {
   display: flex;
   justify-content: flex-end;
-  /* background-color: #fff; */
 }
 
 #main-nav a {
   padding: 0px 0px 0px 30px;
   font-weight: 600;
-  /* opacity: 60%; */
+}
+
+#main-nav #favorite {
+
 }
 
 main {
@@ -90,7 +92,7 @@ main {
   align-self: center;
 }
 
-.page-options {
+.page-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -99,20 +101,20 @@ main {
   /* border-bottom: 1px solid #ddd; */
 }
 
-.page-options {
+.page-header {
   margin: 10px 0px 30px 0px;
   color: #9900CC;
 }
 
-.page-options a {
+.page-header a {
   color: #9900CC;
 }
 
-.page-options strong {
+.page-header strong {
   font-weight: 600;
 }
 
-.page-options small {
+.page-header small {
 	/* font-style: italic; */
 	font-weight: 200;
 	font-size: .6em;
