@@ -27,7 +27,7 @@
     <h4><%= review.title %></h4>
     <p><%= review.rating %> / 5</p>
     <p><%= review.content %></p>
-    <%= image_tag(review.picture, alt: "review photo", method: :get) %>
+    <%= image_tag(review.picture, alt: "review photo", method: :get) %><br>
     <%= link_to 'Edit Review', "/reviews/#{review.id}/edit" %>
     <% end %>
   </section>
