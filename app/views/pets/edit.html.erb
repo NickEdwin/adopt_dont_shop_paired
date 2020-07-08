@@ -10,7 +10,7 @@
         <% end %>
       <% end %>
     </div>
-    
+
     <%= form_tag "/pets/#{@pet.id}", method: :patch, class: 'edit-form' do %>
       <%= label_tag :name %><br>
       <%= text_field_tag :name, @pet.name, placeholder: 'Name' %><br>
