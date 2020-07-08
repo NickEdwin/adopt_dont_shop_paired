@@ -1,36 +1,44 @@
 <main>
-  <section class='page-options'>
+  <section class='page-header'>
     <h2 class='page-title'><%= @shelter.name %></h2>
     <%= link_to 'See Pets', "/shelters/#{@shelter.id}/pets" %>
   </section>
-  <section id='show-shelter'>
-    <div class="shelter-details">
-        <p><%= @shelter.address %><br>
-          <%= @shelter.city %>, <%= @shelter.state %><br>
-          <%= @shelter.zip %>
-        </p>
+
+  <section id='shelter'>
+
+    <div class='text-details'>
+      <p><%= @shelter.address %><br>
+        <%= @shelter.city %>, <%= @shelter.state %><br>
+        <%= @shelter.zip %>
+      </p>
     </div>
 
     <div class='options'>
       <%= link_to 'Update', "/shelters/#{@shelter.id}/edit" %>
       <%= link_to 'Delete', "/shelters/#{@shelter.id}", method: :delete %>
     </div>
+
   </section>
 
-  <section id="reviews">
-    <div class='page-options'>
+  <section id='reviews'>
+
+    <div class='page-header'>
       <h3 class='page-title'>Reviews</h3>
       <%= link_to 'Write Review', "/shelters/#{@shelter.id}/reviews/new" %>
     </div>
 
     <% @reviews.each do |review| %>
-    <h4><%= review.title %></h4>
-    <p><%= review.rating %> / 5</p>
-    <p><%= review.content %></p>
-    <%= image_tag(review.picture, alt: "review photo", method: :get) %><br>
-    <%= link_to 'Edit Review', "/reviews/#{review.id}/edit" %>
-    <%= link_to 'Delete Review', "/reviews/#{review.id}", method: :delete %>
-
+    <div class='review-details'>
+      <h4><%= review.title %></h4>
+      <p><%= review.rating %> / 5</p>
+      <p><%= review.content %></p>
+      <%= image_tag(review.picture, alt: "review photo", method: :get) %><br>
+      <div class='options'>
+        <%= link_to 'Edit', "/reviews/#{review.id}/edit" %>
+        <%= link_to 'Delete', "/reviews/#{review.id}", method: :delete %>
+      </div>
+    </div>
     <% end %>
+
   </section>
 </main>
