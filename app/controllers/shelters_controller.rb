@@ -25,7 +25,6 @@ class SheltersController < ApplicationController
     else
       flash[:errors] = shelter.errors.full_messages
       render :new
-      # render :new does the same thing as redirect to #new page 
     end
   end
 
