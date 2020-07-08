@@ -154,7 +154,7 @@ And I can see my updated review
 ```
 
 ```
-[/] done
+[X] done
 
 User Story 6, Edit a Shelter Review, cont.
 
@@ -165,7 +165,7 @@ And I'm returned to the edit form to edit that review
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 7, Delete a Shelter Review
 
