@@ -3,13 +3,21 @@
   <h2 class='page-title'>Add New Pet</h2>
 </section>
 <section>
+  <div id="flash-alert">
+    <% if !!flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    <% end %>
+  </div>
+  
   <%= form_tag "/shelters/#{@shelter.id}/pets", class: 'edit-form' do %>
-    <%= text_field_tag :name, 'Name' %><br>
-    <%= text_field_tag :approx_age, 'Age' %><br>
-    <%= text_field_tag :description, 'Description' %><br>
-    <%= text_field_tag :sex, 'Sex' %><br>
-    <%= text_field_tag :image, 'Image URL' %><br>
-    <%= text_field_tag :status, 'Adoptable', :readonly => true %><br>
+    <%= text_field_tag :name, nil, placeholder: 'Name' %><br>
+    <%= text_field_tag :approx_age, nil, placeholder: 'Age' %><br>
+    <%= text_field_tag :description, nil, placeholder: 'Description' %><br>
+    <%= text_field_tag :sex, nil, placeholder: 'Sex' %><br>
+    <%= text_field_tag :image, nil, placeholder: 'Image URL' %><br>
+    <%= text_field_tag :status, 'Adoptable', placeholder: 'Adoptable', :readonly => true %><br>
     <%= submit_tag 'Save Pet', class: 'submit' %>
   <% end %>
 </section>
