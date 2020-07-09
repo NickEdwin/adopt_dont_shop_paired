@@ -12,7 +12,7 @@
     <nav id='main-nav'>
       <%= link_to 'Shelters', "/shelters" %>
       <%= link_to 'Pets', "/pets" %>
-      <%= link_to "Favorites (#{session[:fav_pets].count if session[:fav_pets] != nil})", "/favorites", id: 'favorite' %>
+      <%= link_to "Favorites" + " (#{favorite.pets.count if favorite.pets.count != nil})", "/favorites", id: 'favorite' %>
     </nav>
   </header>
   <body>

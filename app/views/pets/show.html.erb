@@ -21,9 +21,9 @@
       <%= link_to 'Update', "/pets/#{@pet.id}/edit" %>
       <%= link_to 'Delete', "/pets/#{@pet.id}", method: :delete %>
       <% if @fav_pet_objects.include?(@pet.id) %>
-        <%= link_to 'Remove pet from favorites', "/favorites/#{@pet.id}", method: :patch %>
+        <%= link_to 'Remove pet from favorites', "/favorites/#{@pet.id}", method: :delete %>
       <% else %>
-        <%= link_to 'Add pet to favorites', "/favorites/#{@pet.id}", method: :patch %>
+        <%= link_to 'Add pet to favorites', "/favorites/#{@pet.id}", method: :post %>
       <% end %>
     </div>
   </section>
