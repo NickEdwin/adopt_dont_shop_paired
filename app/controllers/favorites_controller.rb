@@ -7,7 +7,7 @@ class FavoritesController < ApplicationController
     @pet = Pet.find(params[:pet_id])
     redirect_to "/pets/#{@pet.id}"
     flash[:notice] = "Pet has been added to favorites list."
-    session[:counter] ||= 0
-    session[:counter] += 1
+    session[:favorites] ||= 0
+    session[:favorites] += 1
   end
 end

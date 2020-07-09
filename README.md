@@ -221,7 +221,7 @@ Each pet in my favorites shows the following information:
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 11, Favorite Indicator links to Index Page
 
