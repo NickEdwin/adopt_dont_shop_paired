@@ -11,7 +11,6 @@ RSpec.describe "as a visitor", type: :feature do
       expect(current_path).to eq("/pets")
 
       expect(page).to_not have_content('Noodle')
-
     end
   end
 end

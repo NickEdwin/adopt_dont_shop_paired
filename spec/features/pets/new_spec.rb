@@ -1,11 +1,14 @@
 RSpec.describe 'as a visitor' do
+  before :each do
+    @shelter = Shelter.create(name: "Braun Farm")
+
+  end
+
   it 'when I visit shelter/pets index, use create pet link to fill in form with pet details and add new pet' do
 
-    shelter = Shelter.create!(name: "Braun Farm")
-
-    visit "/shelters/#{shelter.id}/pets"
+    visit "/shelters/#{@shelter.id}/pets"
     click_on 'Create Pet'
-    expect(current_path).to eq("/shelters/#{shelter.id}/pets/new")
+    expect(current_path).to eq("/shelters/#{@shelter.id}/pets/new")
 
     name = "Bella"
     age = 1
@@ -23,7 +26,7 @@ RSpec.describe 'as a visitor' do
     click_on 'Save Pet'
     new_pet = Pet.last
 
-    expect(current_path).to eq("/shelters/#{shelter.id}/pets")
+    expect(current_path).to eq("/shelters/#{@shelter.id}/pets")
 
     expect(page).to have_content("Bella")
     expect(page).to have_content("Braun Farm")
@@ -31,11 +34,9 @@ RSpec.describe 'as a visitor' do
 
   it 'cant create new pet with missing name, age, description, sex, or image url' do
 
-    shelter = Shelter.create!(name: "Braun Farm")
-
-    visit "/shelters/#{shelter.id}/pets"
+    visit "/shelters/#{@shelter.id}/pets"
     click_on 'Create Pet'
-    expect(current_path).to eq("/shelters/#{shelter.id}/pets/new")
+    expect(current_path).to eq("/shelters/#{@shelter.id}/pets/new")
 
     name = "Bella"
     age = 1
@@ -49,7 +50,8 @@ RSpec.describe 'as a visitor' do
     # come back to this and create an upload interface
 
     click_on 'Save Pet'
-    expect(current_path).to eq("/shelters/#{shelter.id}/pets/new")
+
+    expect(current_path).to eq("/shelters/#{@shelter.id}/pets/new")
     expect(page).to have_content('Name can\'t be blank')
     expect(page).to have_content('Sex can\'t be blank')
   end
