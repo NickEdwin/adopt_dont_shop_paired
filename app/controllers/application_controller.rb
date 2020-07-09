@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   helper_method :favorite
 
   def favorite
-      @favorite ||= Favorite.new(session[:fav_pets])
+    session[:fav_pets] ||= []
+    Favorite.new(session[:fav_pets])
   end
 
 end

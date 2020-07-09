@@ -12,4 +12,13 @@ class Favorite
   def remove_pet(id)
     @pets.delete(id)
   end
+
+  def toggle(id)
+    if @pets.include?(id)
+      remove_pet(id)
+    else
+      add_pet(id)
+    end
+  end
+  
 end
