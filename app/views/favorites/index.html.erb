@@ -1,13 +1,23 @@
 <main>
   <section class='page-header'>
-    <% @fav_ids.each do |name, id| %>
-      <h2 class='page-title'> Name : <%= link_to name , "/pets/#{id}" %> </h2?
-    <% end  %>
+    <h2 class='page-title'>Favorite Pets</h2>
   </section>
-  <br><br>
-  <section id='pet-detail'>
-    <% @fav_images.each do |name, image| %>
-      <%= image_tag(image, alt: "Picture of #{name}", method: :get, class: 'pet-image') %>
-    <% end  %>
+
+  <section id='pets-index'>
+    <% if @fav_pet_objects != nil %>
+      <% @fav_pet_objects.each do |pet| %>
+        <div class='pet-card'>
+          <%= image_tag(pet.image, alt: "photo of pet", method: :get) %>
+
+          <div class='pet-details'
+            <a><%= link_to "#{pet.name}", "/pets/#{pet.id}", class: 'pet-name' %></a>
+            <p><%= pet.approx_age %> year(s), <%= pet.sex %></p>
+            <p><%= link_to "#{pet.shelter.name}", "/shelters/#{pet.shelter.id}", class: 'pet-shelter' %></p>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>You have no favorite pets.</p>
+    <% end %>
   </section>
 </main>
