@@ -40,7 +40,6 @@ RSpec.describe 'as a visitor' do
       visit "/shelters/#{shelter.id}/pets/new"
       expect(page).to have_link('Pets')
       expect(page).to have_link('Shelters')
-
     end
   end
 end

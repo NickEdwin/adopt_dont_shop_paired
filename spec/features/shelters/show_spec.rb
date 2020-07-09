@@ -36,5 +36,4 @@ RSpec.describe "visit /shelters/id", type: :feature do
 
     expect(current_path).to eq("/shelters/#{@shelter1.id}/reviews/new")
   end
-
 end
