@@ -12,7 +12,7 @@
     <nav id='main-nav'>
       <%= link_to 'Shelters', "/shelters" %>
       <%= link_to 'Pets', "/pets" %>
-      <%= link_to "#{session[:favorites]} Favorites", "/favorites", id: 'favorite' %>
+      <%= link_to "#{session[:fav_pets].length} Favorites", "/favorites", id: 'favorite' %>
     </nav>
   </header>
   <body>
