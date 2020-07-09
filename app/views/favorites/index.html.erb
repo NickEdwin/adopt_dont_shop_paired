@@ -1,1 +1,13 @@
-<p>Will see favorite pet list here</p>
+<main>
+  <section class='page-header'>
+    <% @fav_ids.each do |name, id| %>
+      <h2 class='page-title'> Name : <%= link_to name , "/pets/#{id}" %> </h2?
+    <% end  %>
+  </section>
+  <br><br>
+  <section id='pet-detail'>
+    <% @fav_images.each do |name, image| %>
+      <%= image_tag(image, alt: "Picture of #{name}", method: :get, class: 'pet-image') %>
+    <% end  %>
+  </section>
+</main>
