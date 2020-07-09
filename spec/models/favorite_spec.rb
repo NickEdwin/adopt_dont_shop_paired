@@ -10,6 +10,9 @@ RSpec.describe Favorite do
       favorite.add_pet(2)
 
       expect(favorite.pets).to eq([1, 2])
+
+      favorite.remove_pet(1)
+      expect(favorite.pets).to eq([2])
     end
   end
 end

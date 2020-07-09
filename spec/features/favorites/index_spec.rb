@@ -15,7 +15,6 @@ RSpec.describe "as a visitor", type: :feature do
 
       visit "/favorites"
 
-      expect(page).to have_content("#{@pet1.name}")
       expect(page).to have_selector(:link_or_button, "#{@pet1.name}")
       expect(page).to have_xpath("//img[@src = 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001403/Australian-Cattle-Dog-On-White-03.jpg' and @alt='photo of pet']")
 
