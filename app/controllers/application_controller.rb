@@ -5,4 +5,5 @@ class ApplicationController < ActionController::Base
   def favorite
       @favorite ||= Favorite.new(session[:fav_pets])
   end
+  
 end
