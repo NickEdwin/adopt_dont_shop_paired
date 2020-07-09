@@ -20,7 +20,11 @@
     <div class='options'>
       <%= link_to 'Update', "/pets/#{@pet.id}/edit" %>
       <%= link_to 'Delete', "/pets/#{@pet.id}", method: :delete %>
-      <%= link_to 'Add pet to favorites', "/favorites/#{@pet.id}", method: :patch %>
+      <% if @fav_pet_objects.include?(@pet.id) %>
+        <%= link_to 'Remove pet from favorites', "/favorites/#{@pet.id}", method: :patch %>
+      <% else %>
+        <%= link_to 'Add pet to favorites', "/favorites/#{@pet.id}", method: :patch %>
+      <% end %>
     </div>
   </section>
 </main>

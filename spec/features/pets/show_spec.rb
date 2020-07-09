@@ -30,4 +30,17 @@ RSpec.describe 'as a visitor' do
 
     expect(page).to have_content("Pet has been added to favorites list.")
   end
+
+  it 'Favorites link changes to \'remove pet from favorites\'' do
+
+    visit "/pets/#{@pet1.id}"
+
+    expect(page).to have_selector(:link_or_button, 'Add pet to favorites')
+
+    click_on "Add pet to favorites"
+    expect(page).to have_content("Pet has been added to favorites list.")
+
+    expect(page).to have_link('Remove pet from favorites')
+  end
+
 end
