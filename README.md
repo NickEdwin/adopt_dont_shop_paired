@@ -206,7 +206,7 @@ The favorite indicator in the nav bar has incremented by one
 
 
 ```
-[ ] done
+[X] done
 
 User Story 10, Favorite Index Page
 
@@ -262,7 +262,7 @@ And I also see that the favorites indicator has decremented by 1
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 14, No Favorites Page
 
