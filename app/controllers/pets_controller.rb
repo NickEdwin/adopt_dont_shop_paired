@@ -6,6 +6,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    @fav_pet_objects = favorite.pets
   end
 
   def new

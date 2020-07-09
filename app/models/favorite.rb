@@ -8,4 +8,8 @@ class Favorite
   def add_pet(id)
     @pets << id
   end
+
+  def remove_pet(id)
+    @pets.delete(id)
+  end
 end
