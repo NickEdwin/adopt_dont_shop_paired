@@ -4,6 +4,11 @@
     <h2 class='page-title'><%= @pet.name %></h2>
     <span>status: <strong><%= @pet.status %></strong></span>
   </section>
+  <div id="flash-alert">
+    <% if !!flash[:notice] %>
+      <%= flash[:notice] %>
+    <% end %>
+  </div>
   <section id='pet-detail'>
 
     <%= image_tag(@pet.image, alt: "photo of pet", method: :get, class: 'pet-image') %>
@@ -15,6 +20,7 @@
     <div class='options'>
       <%= link_to 'Update', "/pets/#{@pet.id}/edit" %>
       <%= link_to 'Delete', "/pets/#{@pet.id}", method: :delete %>
+      <%= link_to 'Add pet to favorites', "/favorites/#{@pet.id}", method: :patch %>
     </div>
   </section>
 </main>
