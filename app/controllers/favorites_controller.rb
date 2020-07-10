@@ -18,4 +18,9 @@ class FavoritesController < ApplicationController
     redirect_back(fallback_location:"/favorites")
   end
 
+  def destroy_all
+    favorite.pets.clear
+    redirect_back(fallback_location:"/favorites")
+  end
+
 end
