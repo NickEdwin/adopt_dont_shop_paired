@@ -15,7 +15,7 @@ class FavoritesController < ApplicationController
     @pet = Pet.find(params[:pet_id])
     favorite.toggle(@pet.id)
     flash[:notice] = "Pet has been removed from favorites list."
-    redirect_to :back
+    redirect_back(fallback_location:"/favorites")
   end
 
 end

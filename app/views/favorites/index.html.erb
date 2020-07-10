@@ -15,6 +15,9 @@
             <p><%= pet.approx_age %> year(s), <%= pet.sex %></p>
             <p><%= link_to "#{pet.shelter.name}", "/shelters/#{pet.shelter.id}", class: 'pet-shelter' %></p>
           </div>
+          <div class='options'>
+            <%= link_to 'Remove', "/favorites/#{pet.id}", method: :delete %>
+          </div>
         </div>
       <% end %>
     <% else %>
