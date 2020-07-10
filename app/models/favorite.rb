@@ -20,5 +20,11 @@ class Favorite
       add_pet(id)
     end
   end
-  
+
+  def pet_objects
+    @pets.map do |pet_id|
+      Pet.find(pet_id)
+    end
+  end
+
 end

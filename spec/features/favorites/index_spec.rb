@@ -32,5 +32,39 @@ RSpec.describe "as a visitor", type: :feature do
         expect(page).to have_content('Favorites')
       end
     end
+
+    it 'each pet has a link to remove from favorites, which redirects to /favorites' do
+
+      visit "/pets/#{@pet1.id}"
+      click_on 'Add pet to favorites'
+      visit "/favorites"
+
+      within(".pet-card") do
+        expect(page).to have_link("Remove")
+        click_on "Remove"
+      end
+
+      expect(current_path).to eq("/favorites")
+      expect(page).to_not have_content("Noodle")
+    end
+
+    it 'has a link to remove all favorite pets at once' do
+      pet2 = Pet.create(name: 'Yoda', approx_age: 6, sex: "male", description: "description of yoda", image: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001403/Australian-Cattle-Dog-On-White-03.jpg", shelter_id: @shelter.id, status: "adoptable" )
+
+      visit "/pets/#{@pet1.id}"
+      click_on 'Add pet to favorites'
+
+      visit "/pets/#{pet2.id}"
+      click_on 'Add pet to favorites'
+
+      visit "/favorites"
+
+      click_on 'Remove All Pets'
+
+      expect(current_path).to eq("/favorites")
+      expect(page).to_not have_content("Noodle")
+      expect(page).to_not have_content("Yoda")
+
+    end
   end
 end

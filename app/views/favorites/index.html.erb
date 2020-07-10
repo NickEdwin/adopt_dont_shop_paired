@@ -1,11 +1,12 @@
 <main>
   <section class='page-header'>
     <h2 class='page-title'>Favorite Pets</h2>
+    <%= link_to 'Remove All Pets', "/favorites", method: :delete %>
   </section>
 
   <section id='pets-index'>
 
-    <% if @fav_pet_objects != nil %>
+    <% if @fav_pet_objects != [] %>
       <% @fav_pet_objects.each do |pet| %>
         <div class='pet-card'>
           <%= image_tag(pet.image, alt: "photo of pet", method: :get) %>
@@ -14,6 +15,9 @@
             <a><%= link_to "#{pet.name}", "/pets/#{pet.id}", class: 'pet-name' %></a>
             <p><%= pet.approx_age %> year(s), <%= pet.sex %></p>
             <p><%= link_to "#{pet.shelter.name}", "/shelters/#{pet.shelter.id}", class: 'pet-shelter' %></p>
+          </div>
+          <div class='options'>
+            <%= link_to 'Remove', "/favorites/#{pet.id}", method: :delete %>
           </div>
         </div>
       <% end %>
