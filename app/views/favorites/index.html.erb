@@ -1,7 +1,11 @@
 <main>
   <section class='page-header'>
     <h2 class='page-title'>Favorite Pets</h2>
-    <%= link_to 'Remove All Pets', "/favorites", method: :delete %>
+    <% if @fav_pet_objects != [] %>
+      <%= link_to 'Remove All Pets', "/favorites", method: :delete %>
+      <%= link_to 'Adopt Favorited Pets', "/favorites/adoption/new" %>
+    <% else %>
+    <% end %>
   </section>
 
   <section id='pets-index'>
