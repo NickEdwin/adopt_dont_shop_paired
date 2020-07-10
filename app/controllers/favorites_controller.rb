@@ -1,10 +1,7 @@
 class FavoritesController < ApplicationController
 
   def index
-    if favorite.pets != nil
-      @fav_pet_objects = favorite.pet_objects
-    else
-    end
+    @fav_pet_objects = favorite.pet_objects if favorite.pets != nil
   end
 
   def create
@@ -18,7 +15,7 @@ class FavoritesController < ApplicationController
     @pet = Pet.find(params[:pet_id])
     favorite.toggle(@pet.id)
     flash[:notice] = "Pet has been removed from favorites list."
-    redirect_to "/pets/#{@pet.id}"
+    redirect_to :back
   end
 
 end
