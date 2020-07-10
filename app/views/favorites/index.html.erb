@@ -5,7 +5,7 @@
 
   <section id='pets-index'>
 
-    <% if @fav_pet_objects != nil %>
+    <% if @fav_pet_objects != [] %>
       <% @fav_pet_objects.each do |pet| %>
         <div class='pet-card'>
           <%= image_tag(pet.image, alt: "photo of pet", method: :get) %>

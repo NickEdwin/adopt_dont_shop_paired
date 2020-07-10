@@ -2,9 +2,7 @@ class FavoritesController < ApplicationController
 
   def index
     if favorite.pets != nil
-      @fav_pet_objects = favorite.pets.map do |pet_id|
-        Pet.find(pet_id)
-      end
+      @fav_pet_objects = favorite.pet_objects
     else
     end
   end
