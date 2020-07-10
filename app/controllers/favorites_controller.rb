@@ -23,4 +23,7 @@ class FavoritesController < ApplicationController
     redirect_back(fallback_location:"/favorites")
   end
 
+  def new
+    @fav_pet_objects = favorite.pet_objects
+  end
 end
