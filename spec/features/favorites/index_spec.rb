@@ -80,7 +80,7 @@ RSpec.describe "as a visitor", type: :feature do
 
       click_on 'Adopt Favorited Pets'
 
-      expect(current_path).to eq("/adoptions/new")
+      expect(current_path).to eq("/applications/new")
 
       expect(page).to have_content("Noodle")
       expect(page).to have_content("Yoda")
