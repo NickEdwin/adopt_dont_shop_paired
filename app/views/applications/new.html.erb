@@ -1,0 +1,36 @@
+<main>
+  <section class='page-header'>
+    <h2 class='page-title'>Submit your application below</h2>
+  </section>
+
+  <div id="flash-alert">
+    <% if !!flash[:notice] %>
+      <%= flash[:notice] %>
+    <% end %>
+  </div>
+
+  <section>
+    <p>Select which pet/pets you'd like to apply for:</p><br>
+    <% @fav_pet_objects.each do |pet| %>
+      <input type="checkbox" name=<%= "#{pet.name}" %> value=<%= "#{pet.id}" %>>
+      <label for=<%= "#{pet.name}" %>><%= pet.name %></label><br>
+    <% end %>
+    <br><br>
+    <p>Enter your personal information below:</p><br>
+      <%= form_tag "/applications", class: 'edit-form' do %>
+      <%= text_field_tag :name, nil, placeholder: 'Name' %><br>
+      <%= text_field_tag :approx_age, nil, placeholder: 'Address' %><br>
+      <%= text_field_tag :description, nil, placeholder: 'City' %><br>
+      <%= text_field_tag :sex, nil, placeholder: 'State' %><br>
+      <%= text_field_tag :zip, nil, placeholder: 'Zip Code' %><br>
+      <%= text_field_tag :phone_number, nil, placeholder: 'Phone Number' %><br>
+      <%= text_field_tag :reason, nil, placeholder: 'Reason you\'ll make a good pet parent!' %><br>
+      <%= submit_tag 'Submit Application', class: 'submit' %>
+    <% end %>
+    <div id="flash-alert">
+      <% if !!flash.now[:notice] %>
+        <%= flash.now[:notice] %>
+      <% end %>
+    </div>
+    </section>
+</main>

@@ -102,8 +102,12 @@ main {
   /* border-bottom: 1px solid #ddd; */
 }
 
-.page-header a {
+.page-header a, span {
   color: #9900CC;
+}
+
+.header-options a, span {
+	margin-left: 15px;
 }
 
 .page-header strong {
