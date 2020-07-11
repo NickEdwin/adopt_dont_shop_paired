@@ -80,7 +80,7 @@ RSpec.describe "as a visitor", type: :feature do
 
       click_on 'Adopt Favorited Pets'
 
-      expect(current_path).to eq("/favorites/adoption/new")
+      expect(current_path).to eq("/adoptions/new")
 
       expect(page).to have_content("Noodle")
       expect(page).to have_content("Yoda")
@@ -99,6 +99,9 @@ RSpec.describe "as a visitor", type: :feature do
       fill_in :reason, with: 'Because I love animals!'
 
       click_on 'Submit Application'
+      # the following expectations won't work until we create
+      # an Application model, save the info, and write logic
+      # for pets displaying after an app is submitted
       expect(page).to have_content("Your application has been submitted.")
 
       expect(current_path).to eq("/favorites")
