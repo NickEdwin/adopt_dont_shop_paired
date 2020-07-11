@@ -12,7 +12,8 @@
   <section>
     <p>Select which pet/pets you'd like to apply for:</p><br>
     <% @fav_pet_objects.each do |pet| %>
-      <input type="checkbox" name="name" value="<%= pet.id %>"> <%= pet.name %>
+      <input type="checkbox" name=<%= "#{pet.name}" %> value=<%= "#{pet.id}" %>>
+      <label for=<%= "#{pet.name}" %>><%= pet.name %></label><br>
     <% end %>
     <br><br>
     <p>Enter your personal information below:</p><br>
@@ -21,9 +22,9 @@
       <%= text_field_tag :approx_age, nil, placeholder: 'Address' %><br>
       <%= text_field_tag :description, nil, placeholder: 'City' %><br>
       <%= text_field_tag :sex, nil, placeholder: 'State' %><br>
-      <%= text_field_tag :image, nil, placeholder: 'Zip Code' %><br>
-      <%= text_field_tag :image, nil, placeholder: 'Phone Number' %><br>
-      <%= text_field_tag :image, nil, placeholder: 'Reason you\'ll make a good pet parent!' %><br>
+      <%= text_field_tag :zip, nil, placeholder: 'Zip Code' %><br>
+      <%= text_field_tag :phone_number, nil, placeholder: 'Phone Number' %><br>
+      <%= text_field_tag :reason, nil, placeholder: 'Reason you\'ll make a good pet parent!' %><br>
       <%= submit_tag 'Submit Application', class: 'submit' %>
     <% end %>
     </section>

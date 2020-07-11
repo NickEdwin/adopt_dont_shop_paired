@@ -2,8 +2,11 @@
   <section class='page-header'>
     <h2 class='page-title'>Favorite Pets</h2>
     <% if @fav_pet_objects != [] %>
+    <span class='header-options'>
       <%= link_to 'Remove All Pets', "/favorites", method: :delete %>
+      <span> | </span>
       <%= link_to 'Adopt Favorited Pets', "/favorites/adoption/new" %>
+    </span>
     <% else %>
     <% end %>
   </section>

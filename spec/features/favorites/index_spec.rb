@@ -68,38 +68,42 @@ RSpec.describe "as a visitor", type: :feature do
     end
 
     it 'shows option to adopt my favorited pets' do
+      pet2 = Pet.create(name: 'Yoda', approx_age: 6, sex: "male", description: "description of yoda", image: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001403/Australian-Cattle-Dog-On-White-03.jpg", shelter_id: @shelter.id, status: "adoptable" )
 
       visit "/pets/#{@pet1.id}"
       click_on 'Add pet to favorites'
-      visit "/pets/#{@pet2.id}"
+      visit "/pets/#{pet2.id}"
       click_on 'Add pet to favorites'
       visit '/favorites'
 
-      expect(page).to have_link("Adopt favorited pets")
+      expect(page).to have_link("Adopt Favorited Pets")
 
-      click_on 'Adopt favorited pets'
+      click_on 'Adopt Favorited Pets'
 
       expect(current_path).to eq("/favorites/adoption/new")
 
-      expect(page).to have_content("#{pet1.name}")
-      expect(page).to have_content("#{pet2.name}")
-      check "#{pet1.name}"
-      check "#{pet2.name}"
+      expect(page).to have_content("Noodle")
+      expect(page).to have_content("Yoda")
+
+      check("Noodle", allow_label_click: true)
+      check("Yoda", allow_label_click: true)
 
       fill_in 'Name', with: 'Timmy'
       fill_in 'Address', with: '123 Street St.'
       fill_in 'City', with: 'Denver'
       fill_in 'State', with: 'CO'
-      fill_in 'Zip', with: '80218'
+      fill_in 'Zip Code', with: '80218'
       fill_in 'Phone Number', with: '303-123-4567'
-      fill_in 'Description', with: 'Because I love animals!'
+      # for the next one, we used a symbol because otherwise Capybara has
+      # to look for text that matches the long placeholder we used.
+      fill_in :reason, with: 'Because I love animals!'
 
       click_on 'Submit Application'
       expect(page).to have_content("Your application has been submitted.")
 
       expect(current_path).to eq("/favorites")
 
-      expect(page).to_not have_content("#{pet1.name}")
+      expect(page).to_not have_content("#{@pet1.name}")
       expect(page).to_not have_content("#{pet2.name}")
       expect(page).to have_content("You have no favorite pets.")
     end
