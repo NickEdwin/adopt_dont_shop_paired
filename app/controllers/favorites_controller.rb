@@ -2,10 +2,7 @@ class FavoritesController < ApplicationController
 
   def index
     @fav_pet_objects = favorite.pet_objects if favorite.pets != nil
-    pet_ids = ApplicationPet.pluck("pet_id")
-    @applications = pet_ids.map do |id|
-       Pet.find(id)
-    end
+    @pets = Pet.find(ApplicationPet.pluck(:pet_id))
   end
 
   def create

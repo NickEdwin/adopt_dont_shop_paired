@@ -40,10 +40,12 @@
   </section>
   <section>
     <div>
-      <% if @applications.any? %>
-        <p>Pets with current applications.</p><br>
-        <% @applications.each do |pet| %>
-          <%= link_to "#{pet.name}", "/pets/#{pet.id}", class: 'pet-name' %><br>
+      <% if @pets.any? %>
+        <h3>Pets with current applications:</h3><br>
+        <% @pets.each do |pet| %>
+          <ul>
+            <li><%= link_to "#{pet.name}", "/pets/#{pet.id}" %><br>
+          </ul>
       <% end  %>
     </div>
     <% end %>
