@@ -12,6 +12,7 @@ class ApplicationsController < ApplicationController
     if application.save
       pet_ids.each do |id|
         ApplicationPet.new(application_id: application.id, pet_id: id)
+        favorite.toggle(id.to_i)
       end
       flash.now[:notice] = "Your application has been submitted."
       redirect_to "/favorites"
