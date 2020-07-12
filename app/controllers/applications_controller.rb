@@ -6,8 +6,7 @@ class ApplicationsController < ApplicationController
 
   def create
     application = Application.new(application_params)
-    require "pry"; binding.pry
-  
+    
     pet_ids = params[:pet_ids]
 
     if application.save

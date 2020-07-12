@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20200711213704) do
     t.string "city"
     t.string "state"
     t.integer "zip"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.text "reason"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

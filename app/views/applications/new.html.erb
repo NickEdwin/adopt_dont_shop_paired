@@ -2,18 +2,18 @@
   <section class='page-header'>
     <h2 class='page-title'>Submit your application below</h2>
   </section>
-
   <div id="flash-alert">
-    <% if !!flash[:notice] %>
-      <%= flash[:notice] %>
+    <% if !!flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <p><%= error %></p>
+      <% end %>
     <% end %>
   </div>
-
   <section>
     <%= form_tag "/applications", class: 'edit-form' do %>
     <p>Select which pet/pets you'd like to apply for:</p><br>
     <% @fav_pet_objects.each do |pet| %>
-      <input type="checkbox" name=<%= "pets[]" %> value=<%= "#{pet.id}" %>>
+      <%= check_box_tag 'pet_ids[]', pet.id %>
       <label for=<%= "#{pet.name}" %>><%= pet.name %></label><br>
     <% end %>
     <br><br>
