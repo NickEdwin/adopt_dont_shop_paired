@@ -380,7 +380,7 @@ Each applicant's name is a link to their application show page
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 21, Pet Applications Index Page When No Applications
 
@@ -390,7 +390,7 @@ I see a message saying that there are no applications for this pet yet
 ```
 
 ```
-[ ] done
+[/] done
 
 User Story 22, Approving an Application
 
