@@ -11,6 +11,7 @@ RSpec.describe Pet do
   end
 
   describe 'relationships' do
-    it {should have_many(:application).through(:application_pets)}
+    it { should have_many :application_pets }
+    it { should have_many(:applications).through(:application_pets) }
   end
 end
