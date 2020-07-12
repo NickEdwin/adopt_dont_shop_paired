@@ -11,7 +11,7 @@ class ApplicationsController < ApplicationController
 
     if application.save
       pet_ids.each do |id|
-        ApplicationPet.new(application_id: application.id, pet_id: id)
+        ApplicationPet.create(application_id: application.id, pet_id: id.to_i)
         favorite.toggle(id.to_i)
       end
       redirect_to "/favorites"
