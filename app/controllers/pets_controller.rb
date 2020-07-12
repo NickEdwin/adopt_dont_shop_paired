@@ -7,6 +7,7 @@ class PetsController < ApplicationController
   def show
     @pet = Pet.find(params[:id])
     @fav_pet_objects = favorite.pets
+    @applicants = Application.find(ApplicationPet.where(pet_id: @pet.id).pluck(:application_id))
   end
 
   def new

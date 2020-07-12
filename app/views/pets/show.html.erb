@@ -27,4 +27,11 @@
       <% end %>
     </div>
   </section>
+  <section>
+    <% if @applicants.any? %>
+      <% @applicants.each do |applicant| %>
+      <p>Applicants for this pet: <%= link_to "#{applicant.name}", "/applications/#{applicant.id}" %></p><br>
+      <% end %>
+    <% end %>
+  </section>
 </main>

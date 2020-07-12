@@ -348,7 +348,7 @@ Each pet's name is a link to their show page
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 19, Application Show Page
 
@@ -367,7 +367,7 @@ I can see the following:
 
 
 ```
-[ ] done
+[X] done
 
 User Story 20, Pet Applications Index Page
 
