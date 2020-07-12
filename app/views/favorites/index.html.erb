@@ -38,4 +38,14 @@
       <p>You have no favorite pets.</p><br><br>
     <% end %>
   </section>
+  <section>
+    <div>
+      <% if @applications.any? %>
+        <p>Pets with current applications.</p><br>
+        <% @applications.each do |pet| %>
+          <%= link_to "#{pet.name}", "/pets/#{pet.id}", class: 'pet-name' %><br>
+      <% end  %>
+    </div>
+    <% end %>
+  </section>
 </main>

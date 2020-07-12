@@ -336,7 +336,7 @@ And I see a flash message indicating that I must complete the form in order to s
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 18, List of Pets that have applications on them
 
