@@ -1,0 +1,20 @@
+<main>
+  <section class='page-header'>
+    <h2 class='page-title'>Application for <%= @application.name %></h2>
+  </section>
+
+  <div>
+    <p>Address: <%= @application.address %></p>
+    <p>City: <%= @application.city %></p>
+    <p>State: <%= @application.state %></p>
+    <p>Zip Code: <%= @application.zip %></p>
+    <p>Phone Number: <%= @application.phone_number %></p>
+    <p>Adoption Reason: <%= @application.reason %></p><br>
+    <ul>
+      <h4>Current Pets Requested</h4>
+        <% @pets.each do |pet| %>
+          <li><%= link_to "#{pet.name}", "/pets/#{pet.name}" %></li>
+      <% end %>
+    </ul>
+  </div>
+</main>
