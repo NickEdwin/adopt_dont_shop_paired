@@ -6,17 +6,19 @@ class ApplicationsController < ApplicationController
 
   def create
     application = Application.new(application_params)
-    params[:pets].each do |id|
-      pet = Pet.find(id)
-      require"pry"; binding.pry
-      ApplicationPet.new(application: application.id ,pet: pet.id)
-      if application.save
-        flash.now[:notice] = "Your application has been submitted."
-        redirect_to "/favorites"
-      else
-        flash[:errors] = application.errors.full_messages
-        redirect_to "/applications/new"
+    require "pry"; binding.pry
+  
+    pet_ids = params[:pet_ids]
+
+    if application.save
+      pet_ids.each do |id|
+        ApplicationPet.new(application_id: application.id, pet_id: id)
       end
+      flash.now[:notice] = "Your application has been submitted."
+      redirect_to "/favorites"
+    else
+      flash[:errors] = application.errors.full_messages
+      redirect_to "/applications/new"
     end
   end
 
