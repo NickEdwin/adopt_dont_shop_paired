@@ -22,6 +22,11 @@ class ApplicationsController < ApplicationController
     end
   end
 
+  def show
+    @application = Application.find(params[:id])
+    @pets = Pet.find(ApplicationPet.where(application_id: @application.id).pluck(:pet_id))
+  end
+
   private
   def application_params
     params.permit(:name, :address, :city, :state, :zip, :phone_number, :reason)
