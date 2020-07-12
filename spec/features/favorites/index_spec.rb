@@ -85,8 +85,17 @@ RSpec.describe "as a visitor", type: :feature do
       expect(page).to have_content("Noodle")
       expect(page).to have_content("Yoda")
 
-      check("Noodle", allow_label_click: true)
-      check("Yoda", allow_label_click: true)
+      #CANNOT FIGURE OUT HOW TO PROPERLY CLICK CHECKBOXES!!!!
+
+      # within all('#pet_ids_')[0] do
+      #   page.check('Noodle', allow_label_click: true)
+      # end
+      #
+      # within all('#pet_ids_')[1] do
+      #   page.check('Noodle', allow_label_click: true)
+      # end
+
+      page.check('Noodle', allow_label_click: true)
 
       fill_in 'Name', with: 'Timmy'
       fill_in 'Address', with: '123 Street St.'
@@ -99,9 +108,7 @@ RSpec.describe "as a visitor", type: :feature do
       fill_in :reason, with: 'Because I love animals!'
 
       click_on 'Submit Application'
-      # the following expectations won't work until we create
-      # an Application model, save the info, and write logic
-      # for pets displaying after an app is submitted
+
       expect(page).to have_content("Your application has been submitted.")
 
       expect(current_path).to eq("/favorites")

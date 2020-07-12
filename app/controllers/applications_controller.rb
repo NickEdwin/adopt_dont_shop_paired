@@ -5,12 +5,24 @@ class ApplicationsController < ApplicationController
   end
 
   def create
-    # can't implement flash.now notice until we create
-    # Application model to check form field validations
-    # then we can do an if/else like we did in shelters#create
+    application = Application.new(application_params)
 
-    # app = Application.new(app_params)
-    # flash.now[:notice] = "Your application has been submitted."
-    redirect_to "/favorites"
+    pet_ids = params[:pet_ids]
+
+    if application.save
+      pet_ids.each do |id|
+        ApplicationPet.new(application_id: application.id, pet_id: id)
+      end
+      flash.now[:notice] = "Your application has been submitted."
+      redirect_to "/favorites"
+    else
+      flash[:errors] = application.errors.full_messages
+      redirect_to "/applications/new"
+    end
+  end
+
+  private
+  def application_params
+    params.permit(:name, :address, :city, :state, :zip, :phone_number, :reason)
   end
 end

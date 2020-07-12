@@ -194,6 +194,10 @@ main {
   margin-bottom: 100px;
 }
 
+.edit-form input#pet_ids {
+	background-color: black;
+}
+
 .edit-form input {
   width: 70%;
   padding: 10px;
@@ -212,12 +216,12 @@ main {
   color: #9900CC;
 }
 
-.edit-form label {
+/* .edit-form label {
   font-size: .8em;
   display: block;
   margin-left: 8px;
   margin-bottom: -10px;
-}
+} */
 
 .edit-form .submit {
   background-color: #9900CC;

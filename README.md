@@ -292,7 +292,7 @@ And the favorites indicator returns to 0
 Users will be able to submit an application for one ore more pets they they've favorited.
 
 ```
-[ ] done
+[/] done
 
 User Story 16, Applying for a Pet
 
@@ -313,10 +313,14 @@ When I select one or more pets, and fill in my
 And I click on a button to submit my application
 I see a flash message indicating my application went through for the pets that were selected
 And I'm taken back to my favorites page where I no longer see the pets for which I just applied listed as favorites
+
+# most of this is done except:
+# how to find and check a checkbox in capybara
+# and removing pets with applications from fav index
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 17, Incomplete application for a Pet
 
