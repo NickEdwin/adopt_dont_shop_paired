@@ -6,7 +6,7 @@ class ApplicationsController < ApplicationController
 
   def create
     application = Application.new(application_params)
-    
+
     pet_ids = params[:pet_ids]
 
     if application.save

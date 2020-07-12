@@ -9,6 +9,9 @@
       <% end %>
     <% end %>
   </div>
+  <div id="flash-alert">
+    <p><%= flash.now[:notice] %></p>
+  </div>
   <section>
     <%= form_tag "/applications", class: 'edit-form' do %>
     <p>Select which pet/pets you'd like to apply for:</p><br>

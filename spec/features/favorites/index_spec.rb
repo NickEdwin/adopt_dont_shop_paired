@@ -86,7 +86,7 @@ RSpec.describe "as a visitor", type: :feature do
       expect(page).to have_content("Yoda")
 
       #CANNOT FIGURE OUT HOW TO PROPERLY CLICK CHECKBOXES!!!!
-      
+
       # within all('#pet_ids_')[0] do
       #   page.check('Noodle', allow_label_click: true)
       # end
@@ -94,6 +94,8 @@ RSpec.describe "as a visitor", type: :feature do
       # within all('#pet_ids_')[1] do
       #   page.check('Noodle', allow_label_click: true)
       # end
+
+      page.check('Noodle', allow_label_click: true)
 
       fill_in 'Name', with: 'Timmy'
       fill_in 'Address', with: '123 Street St.'
