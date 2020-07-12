@@ -2,6 +2,10 @@ class FavoritesController < ApplicationController
 
   def index
     @fav_pet_objects = favorite.pet_objects if favorite.pets != nil
+    pet_ids = ApplicationPet.pluck("pet_id")
+    @applications = pet_ids.map do |id|
+       Pet.find(id)
+    end
   end
 
   def create
@@ -22,5 +26,4 @@ class FavoritesController < ApplicationController
     favorite.pets.clear
     redirect_back(fallback_location:"/favorites")
   end
-
 end
