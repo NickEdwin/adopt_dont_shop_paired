@@ -30,8 +30,10 @@
   <section>
     <% if @applicants.any? %>
       <% @applicants.each do |applicant| %>
-      <p>Applicants for this pet: <%= link_to "#{applicant.name}", "/applications/#{applicant.id}" %></p><br>
+        <p>Applicants for this pet: <%= link_to "#{applicant.name}", "/applications/#{applicant.id}" %></p><br>
       <% end %>
+    <% else %>
+      <p>There are no current applications for this pet.</p>
     <% end %>
   </section>
 </main>
