@@ -13,7 +13,8 @@
     <ul>
       <h4>Current Pets Requested</h4>
         <% @pets.each do |pet| %>
-          <li><%= link_to "#{pet.name}", "/pets/#{pet.name}" %></li>
+          <li><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></li>
+          <dd>- <%= link_to "Click here to approve application for #{pet.name}", "/pets/#{pet.id}", action: "#{pet}.update(status: 'pending')" %></dd>
       <% end %>
     </ul>
   </div>
