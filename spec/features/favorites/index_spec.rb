@@ -82,12 +82,9 @@ RSpec.describe "as a visitor", type: :feature do
 
       expect(page).to have_content("Noodle")
       expect(page).to have_content("Yoda")
-      
-        # Still cant get this!
-        #I think we have to assign a CSS label boxes
-        #And use that ref id as the label for clicking?
 
-      page.check('1')
+      page.check('Noodle')
+      page.check('Yoda')
 
       fill_in 'Name', with: 'Timmy'
       fill_in 'Address', with: '123 Street St.'
@@ -103,8 +100,8 @@ RSpec.describe "as a visitor", type: :feature do
 
       expect(current_path).to eq("/favorites")
 
-      expect(page).to_not have_content("#{@pet1.name}")
-      expect(page).to_not have_content("#{@pet2.name}")
+      expect(page).to have_content("#{@pet1.name}")
+      expect(page).to have_content("#{@pet2.name}")
       expect(page).to have_content("You have no favorite pets.")
     end
   end
