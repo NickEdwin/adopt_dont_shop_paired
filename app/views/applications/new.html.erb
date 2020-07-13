@@ -14,13 +14,14 @@
   </div>
   <section>
     <%= form_tag "/applications", class: 'edit-form' do %>
-    <p>Select which pet/pets you'd like to apply for:</p><br>
-    <% @fav_pet_objects.each do |pet| %>
-      <%= check_box_tag 'pet_ids[]', pet.id %>
-      <label for=<%= "#{pet.name}" %>><%= pet.name %></label><br>
-    <% end %>
-    <br><br>
-    <p>Enter your personal information below:</p><br>
+      <p>Select which pet/pets you'd like to apply for:</p><br>
+
+      <div class='checkbox'>
+        <%= collection_check_boxes(:applications, :pet_ids, @fav_pet_objects, :id, :name, {include_hidden: false}) %>
+      </div>
+
+      <br><br>
+      <p>Enter your personal information below:</p><br>
       <%= text_field_tag :name, nil, placeholder: 'Name' %><br>
       <%= text_field_tag :address, nil, placeholder: 'Address' %><br>
       <%= text_field_tag :city, nil, placeholder: 'City' %><br>

@@ -11,7 +11,7 @@ class ApplicationsController < ApplicationController
   def create
     application = Application.new(application_params)
 
-    pet_ids = params[:pet_ids]
+    pet_ids = params[:applications][:pet_ids]
 
     if application.save
       pet_ids.each do |id|
