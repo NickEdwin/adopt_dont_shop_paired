@@ -3,13 +3,15 @@
     <h2 class='page-title'>Application for: <%= @application.name %></h2>
   </section>
 
-  <div>
-    <p>Address: <%= @application.address %></p>
-    <p>City: <%= @application.city %></p>
-    <p>State: <%= @application.state %></p>
-    <p>Zip Code: <%= @application.zip %></p>
-    <p>Phone Number: <%= @application.phone_number %></p><br>
-    <p>Adoption Reason: <%= @application.reason %></p><br>
+  <div id='app-detail'>
+    <p><%= @application.address %></p>
+    <p><%= @application.city %>, <%= @application.state %></p>
+    <p><%= @application.zip %></p><br>
+    <small>Phone Number:</small>
+    <p><%= @application.phone_number %></p><br>
+
+    <small>Adoption Reason:</small>
+    <p><%= @application.reason %></p>
   </div>
   <section id='list-section'>
     <div class='page-header'>

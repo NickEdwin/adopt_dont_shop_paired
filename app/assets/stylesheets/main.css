@@ -329,6 +329,15 @@ main {
 	margin-top: 0px;
 }
 
+#app-detail {
+	line-height: 22px;
+}
+
+#app-detail small {
+	font-size: .8em;
+	color: #777;
+}
+
 #flash-alert {
 	background-color: red;
 }
