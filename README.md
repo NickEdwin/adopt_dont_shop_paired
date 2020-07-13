@@ -390,7 +390,7 @@ I see a message saying that there are no applications for this pet yet
 ```
 
 ```
-[/] done
+[X] done
 
 User Story 22, Approving an Application
 
