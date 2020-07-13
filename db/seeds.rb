@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-shelter = Shelter.create(name: "Braun Farm")
-shelter2 = Shelter.create(name: "Jax Rescue")
+shelter = Shelter.create(name: "Braun Farm", address: '4242 Farm Rd.', city: 'Eustis', state: 'FL', zip: 33790)
+shelter2 = Shelter.create(name: "Jax Rescue", address: '30 Matanzas Way.', city: 'Jacksonville', state: 'FL', zip: 33578)
 
 pet1 = Pet.create(name: 'Noodle', approx_age: 3, sex: "male", image: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001403/Australian-Cattle-Dog-On-White-03.jpg", shelter_id: shelter.id, status: 'adoptable' )
 
