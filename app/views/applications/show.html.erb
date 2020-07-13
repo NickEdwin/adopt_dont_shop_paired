@@ -21,7 +21,7 @@
         <div class='pet-list'>
           <h4><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h4>
           <span class='options'>
-            <%= link_to "Approve", "/pets/#{pet.id}", action: "#{pet}.update(status: 'pending')" %>
+            <%= link_to 'Approve', "/pets/#{pet.id}?status=pending", method: :patch %>
           </span>
         </div>
       <% end %>
