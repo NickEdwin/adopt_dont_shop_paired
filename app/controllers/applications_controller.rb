@@ -11,7 +11,10 @@ class ApplicationsController < ApplicationController
   def create
     application = Application.new(application_params)
 
-    pet_ids = params[:pet_ids]
+    # the following gives us a pet_ids array, but
+    # the first item is "" or 0. which then
+    # makes favorite.pet_objects error out.
+    pet_ids = params[:applications][:pet_ids]
 
     if application.save
       pet_ids.each do |id|
