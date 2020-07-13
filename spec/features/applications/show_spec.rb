@@ -17,7 +17,7 @@ RSpec.describe "as a visitor", type: :feature do
       expect(page).to have_content('CO')
       expect(page).to have_content('80218')
       expect(page).to have_content('303-123-4567')
-      expect(page).to have_content('Adoption Reason: Because I love animals!')
+      expect(page).to have_content('Because I love animals!')
 
       expect(page).to have_selector(:link_or_button, 'Noodle')
       click_on 'Noodle'

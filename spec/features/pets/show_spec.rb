@@ -49,7 +49,9 @@ RSpec.describe 'as a visitor' do
   it 'Displays outstanding applications for a pet' do
     visit "/pets/#{@pet1.id}"
 
-    expect(page).to have_selector(:link_or_button, "Timmy")
+    click_on "See Applicants"
+
+    expect(current_path).to eq("/applications")
 
     click_on "Timmy"
 
@@ -58,6 +60,10 @@ RSpec.describe 'as a visitor' do
 
   it 'Displays that a pet has no applicants' do
     visit "/pets/#{@pet2.id}"
+
+    click_on "See Applicants"
+
+    expect(current_path).to eq("/applications")
 
     expect(page).to have_content("There are no current applications for this pet.")
   end

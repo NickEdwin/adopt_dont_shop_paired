@@ -30,6 +30,7 @@
       <% else %>
         <%= link_to 'Add pet to favorites', "/favorites/#{@pet.id}", method: :post %>
       <% end %>
+      <%= link_to 'See Applicants', "/applications?pet_id=#{@pet.id}" %>
     </div>
   </section>
 
