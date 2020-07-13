@@ -34,18 +34,4 @@
     </div>
   </section>
 
-  <section id='list-section'>
-    <div class='page-header'>
-      <h3 class='page-title'>Applicants for this Pet</h3>
-    </div>
-    <% if @applicants.any? %>
-      <% @applicants.each do |applicant| %>
-        <ul class='list'>
-          <li><%= link_to "#{applicant.name}", "/applications/#{applicant.id}", class: 'list-name' %></li>
-        </ul>
-      <% end %>
-    <% else %>
-      <p>There are no current applications for this pet.</p>
-    <% end %>
-  </section>
 </main>
