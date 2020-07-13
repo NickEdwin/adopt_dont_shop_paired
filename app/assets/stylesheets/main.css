@@ -97,7 +97,7 @@ main {
   justify-content: space-between;
   align-items: baseline;
   padding-bottom: 8px;
-	margin: 10px 0px 30px 0px;
+	margin: 10px 0px 20px 0px;
   color: #9900CC;
   /* border-bottom: 1px solid #ddd; */
 }
@@ -154,6 +154,7 @@ main {
   justify-content: flex-start;
   flex-wrap: wrap;
   height: auto;
+	margin-bottom: 30px;
 }
 
 .pet-card {
@@ -281,6 +282,43 @@ main {
 	margin-top: 20px;
 }
 
+#pet-apps {
+	margin: 40px 0 30px 0;
+	padding-top: 10px;
+	border-top: 1px solid #ddd;
+}
+
+#pet-apps .app {
+	margin-left: 30px;
+}
+
+#pet-apps .app {
+	margin-bottom: 10px;
+}
+
+#pet-apps .app .app-name:hover {
+	color: #9900CC;
+}
+
 #flash-alert {
 	background-color: red;
+}
+
+footer {
+	margin: 100px 0 50px 0px;
+	padding-top: 20px;
+	border-top: 1px solid #ddd;
+	width: 60%;
+	display: flex;
+	justify-content: flex-start;
+	align-self: center;
+}
+
+footer small {
+	display: block;
+	width: 70%;
+	text-align: left;
+	font-style: italic;
+	font-size: .8em;
+	line-height: 20px;
 }
