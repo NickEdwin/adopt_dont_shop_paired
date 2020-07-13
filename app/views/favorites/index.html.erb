@@ -38,16 +38,19 @@
       <p>You have no favorite pets.</p><br><br>
     <% end %>
   </section>
-  <section>
-    <div>
-      <% if @pets.any? %>
-        <h3>Pets with current applications:</h3><br>
-        <% @pets.each do |pet| %>
-          <ul>
-            <li><%= link_to "#{pet.name}", "/pets/#{pet.id}" %><br>
-          </ul>
-      <% end  %>
+
+  <section id='list-section'>
+
+    <div class='page-header'>
+      <h3 class='page-title'>Pets with Applications</h3>
     </div>
+
+    <% if @pets.any? %>
+      <% @pets.each do |pet| %>
+          <ul class='list'>
+            <li><%= link_to "#{pet.name}", "/pets/#{pet.id}", class: 'list-name' %></li>
+          </ul>
+      <% end %>
     <% end %>
   </section>
 </main>

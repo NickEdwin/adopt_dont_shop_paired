@@ -49,8 +49,6 @@ RSpec.describe 'as a visitor' do
   it 'Displays outstanding applications for a pet' do
     visit "/pets/#{@pet1.id}"
 
-    expect(page).to have_content("Applicants for this pet: Timmy")
-
     expect(page).to have_selector(:link_or_button, "Timmy")
 
     click_on "Timmy"
@@ -67,11 +65,11 @@ RSpec.describe 'as a visitor' do
   it "Updates show page for pending application" do
     visit "/applications/#{@application1.id}"
 
-    click_on "Click here to approve application for #{@pet1.name}"
+    click_on "Approve"
 
     expect(current_path).to eq("/pets/#{@pet1.id}")
 
-    expect(page).to have_content("This pet is currently on hold for: #{@application1.name}")
+    expect(page).to have_content("This pet is currently on hold for: Timmy")
     expect(page).to have_content('status: pending')
   end
 end

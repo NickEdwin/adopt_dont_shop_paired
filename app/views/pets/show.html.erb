@@ -19,7 +19,6 @@
 
     <%= image_tag(@pet.image, alt: "photo of pet", method: :get, class: 'pet-image') %>
 
-
     <p><%= @pet.approx_age %> year(s), <%= @pet.sex %><br>
     <%= @pet.description %></p>
 
@@ -33,10 +32,16 @@
       <% end %>
     </div>
   </section>
-  <section>
+
+  <section id='list-section'>
+    <div class='page-header'>
+      <h3 class='page-title'>Applicants for this Pet</h3>
+    </div>
     <% if @applicants.any? %>
       <% @applicants.each do |applicant| %>
-        <p>Applicants for this pet: <%= link_to "#{applicant.name}", "/applications/#{applicant.id}" %></p><br>
+        <ul class='list'>
+          <li><%= link_to "#{applicant.name}", "/applications/#{applicant.id}", class: 'list-name' %></li>
+        </ul>
       <% end %>
     <% else %>
       <p>There are no current applications for this pet.</p>

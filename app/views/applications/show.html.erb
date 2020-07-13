@@ -1,21 +1,29 @@
 <main>
   <section class='page-header'>
-    <h2 class='page-title'>Application for <%= @application.name %></h2>
+    <h2 class='page-title'>Application for: <%= @application.name %></h2>
   </section>
 
-  <div>
-    <p>Address: <%= @application.address %></p>
-    <p>City: <%= @application.city %></p>
-    <p>State: <%= @application.state %></p>
-    <p>Zip Code: <%= @application.zip %></p>
-    <p>Phone Number: <%= @application.phone_number %></p>
-    <p>Adoption Reason: <%= @application.reason %></p><br>
-    <ul>
-      <h4>Current Pets Requested</h4>
-        <% @pets.each do |pet| %>
-          <li><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></li>
-          <dd>- <%= link_to "Click here to approve application for #{pet.name}", "/pets/#{pet.id}", action: "#{pet}.update(status: 'pending')" %></dd>
-      <% end %>
-    </ul>
+  <div id='app-detail'>
+    <p><%= @application.address %></p>
+    <p><%= @application.city %>, <%= @application.state %></p>
+    <p><%= @application.zip %></p><br>
+    <small>Phone Number:</small>
+    <p><%= @application.phone_number %></p><br>
+
+    <small>Adoption Reason:</small>
+    <p><%= @application.reason %></p>
   </div>
+  <section id='list-section'>
+    <div class='page-header'>
+      <h3 class='page-title'>Current Pets Requested</h3>
+    </div>
+      <% @pets.each do |pet| %>
+        <div class='pet-list'>
+          <h4><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h4>
+          <span class='options'>
+            <%= link_to "Approve", "/pets/#{pet.id}", action: "#{pet}.update(status: 'pending')" %>
+          </span>
+        </div>
+      <% end %>
+  </section>
 </main>

@@ -97,7 +97,7 @@ main {
   justify-content: space-between;
   align-items: baseline;
   padding-bottom: 8px;
-	margin: 10px 0px 30px 0px;
+	margin: 10px 0px 20px 0px;
   color: #9900CC;
   /* border-bottom: 1px solid #ddd; */
 }
@@ -133,10 +133,10 @@ main {
 	margin: 0 0 0 0px;
 }
 
-.options a {
+.shelter .options a {
   font-size: .8em;
   opacity: 70%;
-	margin-right: 10px;
+	/* margin-right: 10px; */
 }
 
 .options a:hover {
@@ -147,6 +147,7 @@ main {
 	font-size: .8em;
   opacity: 70%;
 	margin-right: 10px;
+	color: #777;
 }
 
 #pets-index {
@@ -154,6 +155,7 @@ main {
   justify-content: flex-start;
   flex-wrap: wrap;
   height: auto;
+	margin-bottom: 30px;
 }
 
 .pet-card {
@@ -188,6 +190,22 @@ main {
 .pet-card .options {
   margin: 5px 15px 15px 5px;
   text-align: right;
+}
+
+.pet-card .options a {
+  font-size: .8em;
+  opacity: 70%;
+	margin-right: 10px;
+}
+
+.options a {
+  font-size: .8em;
+  opacity: 70%;
+	/* margin-right: 10px; */
+}
+
+.options a:hover {
+  color: #9900CC;
 }
 
 .edit-form {
@@ -239,7 +257,7 @@ main {
 }
 
 .pet-image {
-  width: 100%;
+  width: 50%;
   height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
@@ -252,7 +270,7 @@ main {
 }
 
 #pet-detail .options {
-  margin: 20px 0 100px 0;
+  margin: 20px 0 30px 0;
 }
 
 #pet-detail .options a {
@@ -281,6 +299,64 @@ main {
 	margin-top: 20px;
 }
 
+#list-section {
+	margin: 40px 0 30px 0;
+	padding-top: 10px;
+	border-top: 1px solid #ddd;
+}
+
+#list-section .list {
+	margin-left: 30px;
+}
+
+#list-section .list {
+	margin-bottom: 10px;
+}
+
+#list-section .list .list-name:hover {
+	color: #9900CC;
+}
+
+.pet-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0 20px 0px;
+	align-content: baseline;
+}
+
+.pet-list .options {
+	margin-top: 0px;
+}
+
+#app-detail {
+	line-height: 22px;
+}
+
+#app-detail small {
+	font-size: .8em;
+	color: #777;
+}
+
 #flash-alert {
 	background-color: red;
+}
+
+footer {
+	margin: 100px 0 50px 0px;
+	padding-top: 20px;
+	border-top: 1px solid #ddd;
+	width: 60%;
+	display: flex;
+	justify-content: flex-start;
+	align-self: center;
+}
+
+footer small {
+	display: block;
+	width: 70%;
+	text-align: left;
+	font-style: italic;
+	font-size: .8em;
+	line-height: 20px;
 }
