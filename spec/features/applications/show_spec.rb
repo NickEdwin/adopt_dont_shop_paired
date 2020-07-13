@@ -12,11 +12,11 @@ RSpec.describe "as a visitor", type: :feature do
       visit "/applications/#{@application1.id}"
 
       expect(page).to have_content('Timmy')
-      expect(page).to have_content('Address: 123 Street St.')
-      expect(page).to have_content('City: Denver')
-      expect(page).to have_content('State: CO')
-      expect(page).to have_content('Zip Code: 80218')
-      expect(page).to have_content('Phone Number: 303-123-4567')
+      expect(page).to have_content('123 Street St.')
+      expect(page).to have_content('Denver')
+      expect(page).to have_content('CO')
+      expect(page).to have_content('80218')
+      expect(page).to have_content('303-123-4567')
       expect(page).to have_content('Adoption Reason: Because I love animals!')
 
       expect(page).to have_selector(:link_or_button, 'Noodle')
