@@ -46,30 +46,14 @@ RSpec.describe 'as a visitor' do
     expect(page).to have_selector(:link_or_button, 'Remove pet from favorites')
   end
 
-  it 'Displays outstanding applications for a pet' do
-    visit "/pets/#{@pet1.id}"
+  it 'Shows status: pending once an application has been approved' do
 
-    expect(page).to have_selector(:link_or_button, "Timmy")
-
-    click_on "Timmy"
-
-    expect(current_path).to eq("/applications/#{@application1.id}")
-  end
-
-  it 'Displays that a pet has no applicants' do
-    visit "/pets/#{@pet2.id}"
-
-    expect(page).to have_content("There are no current applications for this pet.")
-  end
-
-  it "Updates show page for pending application" do
     visit "/applications/#{@application1.id}"
-
-    click_on "Approve"
-
+    click_on 'Approve'
     expect(current_path).to eq("/pets/#{@pet1.id}")
 
-    expect(page).to have_content("This pet is currently on hold for: Timmy")
     expect(page).to have_content('status: pending')
+    expect(page).to have_content('This pet is currently on hold for: Timmy')
   end
+
 end

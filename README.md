@@ -390,7 +390,7 @@ I see a message saying that there are no applications for this pet yet
 ```
 
 ```
-[/] done
+[X] done
 
 User Story 22, Approving an Application
 
@@ -404,7 +404,7 @@ And I see text on the page that says who this pet is on hold for (Ex: "On hold f
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 23, Users can get approved to adopt more than one pet
 
@@ -424,12 +424,14 @@ When a pet has more than one application made for them
 And one application has already been approved for them
 I can not approve any other applications for that pet but all other applications still remain on file (they can be seen on the pets application index page)
 (This can be done by either taking away the option to approve the application, or having a flash message pop up saying that no more applications can be approved for this pet at this time)
+
+# I think this story will require having a 'status' column added to the Applications Table that we can change/toggle with 'update'
 ```
 
 ```
 User Story 25, Approved Applications can be revoked
 
-[ ] done
+[X] done
 
 As a visitor
 After an application has been approved for a pet

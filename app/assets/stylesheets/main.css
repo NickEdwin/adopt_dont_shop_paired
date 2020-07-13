@@ -317,6 +317,23 @@ main {
 	color: #9900CC;
 }
 
+#app-index {
+	margin: 20px 0 30px 0;
+	padding-top: 10px;
+}
+
+#app-index .list {
+	margin-left: 30px;
+}
+
+#app-index .list {
+	margin-bottom: 10px;
+}
+
+#app-index .list .list-name:hover {
+	color: #9900CC;
+}
+
 .pet-list {
   width: 100%;
   display: flex;
@@ -338,8 +355,18 @@ main {
 	color: #777;
 }
 
+#app-index .app-names {
+	margin-bottom: 20px;
+}
+
 #flash-alert {
 	background-color: red;
+}
+
+#on-hold {
+	/* font-style: italic; */
+	color: #777;
+	margin-bottom: 20px;
 }
 
 footer {

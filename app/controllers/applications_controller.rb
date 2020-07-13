@@ -1,4 +1,8 @@
 class ApplicationsController < ApplicationController
+  def index
+    @applicants = Application.find(ApplicationPet.where(pet_id: params[:pet_id]).pluck(:application_id))
+    @pet = Pet.find(params[:pet_id])
+  end
 
   def new
     @fav_pet_objects = favorite.pet_objects
