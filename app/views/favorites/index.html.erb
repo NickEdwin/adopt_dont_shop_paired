@@ -39,7 +39,7 @@
     <% end %>
   </section>
 
-  <section id='pet-apps'>
+  <section id='list-section'>
 
     <div class='page-header'>
       <h3 class='page-title'>Pets with Applications</h3>
@@ -47,8 +47,8 @@
 
     <% if @pets.any? %>
       <% @pets.each do |pet| %>
-          <ul class='app'>
-            <li><%= link_to "#{pet.name}", "/pets/#{pet.id}", class: 'app-name' %></li>
+          <ul class='list'>
+            <li><%= link_to "#{pet.name}", "/pets/#{pet.id}", class: 'list-name' %></li>
           </ul>
       <% end %>
     <% end %>
