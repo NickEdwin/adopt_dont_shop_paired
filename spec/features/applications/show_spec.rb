@@ -29,9 +29,9 @@ RSpec.describe "as a visitor", type: :feature do
 
       visit "/applications/#{@application1.id}"
 
-      expect(page).to have_selector(:link_or_button, 'Click here to approve application for Noodle')
+      expect(page).to have_selector(:link_or_button, 'Approve')
 
-      click_on 'Click here to approve application for Noodle'
+      click_on 'Approve'
 
       expect(current_path).to eq("/pets/#{@pet1.id}")
     end

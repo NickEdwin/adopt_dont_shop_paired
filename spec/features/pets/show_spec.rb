@@ -49,8 +49,6 @@ RSpec.describe 'as a visitor' do
   it 'Displays outstanding applications for a pet' do
     visit "/pets/#{@pet1.id}"
 
-    expect(page).to have_content("Applicants for this pet: Timmy")
-
     expect(page).to have_selector(:link_or_button, "Timmy")
 
     click_on "Timmy"
