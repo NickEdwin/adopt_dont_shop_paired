@@ -17,7 +17,7 @@
     <div class='page-header'>
       <h3 class='page-title'>Current Pets Requested</h3>
     </div>
-      <% @pets.each do |pet| %>
+      <% @application.pets.each do |pet| %>
         <div class='pet-list'>
           <h4><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h4>
           <span class='options'>

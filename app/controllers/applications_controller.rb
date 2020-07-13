@@ -28,7 +28,6 @@ class ApplicationsController < ApplicationController
 
   def show
     @application = Application.find(params[:id])
-    @pets = Pet.find(ApplicationPet.where(application_id: @application.id).pluck(:pet_id))
   end
 
   private
