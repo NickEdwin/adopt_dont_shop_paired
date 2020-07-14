@@ -1,10 +1,11 @@
 <main>
-  <section class='page-header'>
-    <h2 class='page-title'><%= @shelter.name %></h2>
-    <%= link_to 'See Pets', "/shelters/#{@shelter.id}/pets" %>
-  </section>
 
   <section id='shelter'>
+    <section class='page-header'>
+      <h2 class='page-title'><%= @shelter.name %></h2>
+      <p>Number of Pets Available: <%= @shelter.num_of_pets %></p>
+      <%= link_to 'See Pets', "/shelters/#{@shelter.id}/pets" %>
+    </section>
 
     <div class='text-details'>
       <p><%= @shelter.address %><br>
@@ -12,11 +13,15 @@
         <%= @shelter.zip %>
       </p>
     </div>
-
+    <br>
+    <div>
+  <p>Applications on file: <%= @shelter.num_of_applications %></p>
+    </div>
     <div class='options'>
       <%= link_to 'Update', "/shelters/#{@shelter.id}/edit" %>
       <%= link_to 'Delete', "/shelters/#{@shelter.id}", method: :delete %>
     </div>
+
     <div id="flash-alert">
       <% if !!flash[:notice] %>
         <%= flash[:notice] %>
@@ -29,6 +34,7 @@
 
     <div class='page-header'>
       <h3 class='page-title'>Reviews</h3>
+      <p>Average Rating: <%= @shelter.average_rating.round(2) %>/5.0 </p>
       <%= link_to 'Write Review', "/shelters/#{@shelter.id}/reviews/new" %>
     </div>
 

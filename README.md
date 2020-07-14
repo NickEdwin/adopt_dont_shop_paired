@@ -499,7 +499,7 @@ I see a flash message indicating which field(s) I am missing
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 30, Shelter Statistics
 

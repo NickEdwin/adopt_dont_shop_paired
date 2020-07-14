@@ -15,4 +15,22 @@ class Shelter < ApplicationRecord
   def self.sort_pet_count
     all.sort_by { |shelter| shelter.pets.count }.reverse
   end
+
+  def num_of_pets
+    self.pets.count
+  end
+
+  def average_rating
+    if self.reviews.any?
+      self.reviews.average(:rating)
+    else
+      0
+    end
+  end
+
+  def num_of_applications
+    self.pets.sum do |pet|
+      pet.applications.count
+    end
+  end
 end
