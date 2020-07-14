@@ -70,8 +70,8 @@ ActiveRecord::Schema.define(version: 20200711213704) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "application_pets", "applications"
-  add_foreign_key "application_pets", "pets"
-  add_foreign_key "pets", "shelters"
-  add_foreign_key "reviews", "shelters"
+  add_foreign_key "application_pets", "applications", on_delete: :cascade
+  add_foreign_key "application_pets", "pets", on_delete: :cascade
+  add_foreign_key "pets", "shelters", on_delete: :cascade
+  add_foreign_key "reviews", "shelters", on_delete: :cascade
 end
