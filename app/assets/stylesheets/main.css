@@ -109,6 +109,10 @@ main {
 	color: #777;
 }
 
+.shelter .options {
+	margin-top: 0px;
+}
+
 #shelter .options a {
 	margin-right: 10px;
 }
