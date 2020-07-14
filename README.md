@@ -466,7 +466,7 @@ Either:
 ```
 
 ```
-[ ] done
+[/] done
 
 User Story 27, Shelters can be Deleted as long as all pets do not have approved applications on them
 
@@ -478,7 +478,7 @@ Then all of their pets are deleted as well
 ```
 
 ```
-[ ] done
+[/] done
 
 User Story 28, Deleting Shelters Deletes its Reviews
 
