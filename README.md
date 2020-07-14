@@ -519,7 +519,7 @@ Visitors will have additional constraints when manipulating pet data in the data
 
 
 ```
-[ ] done
+[X] done
 
 User Story 31, Pets with approved applications cannot be deleted
 
