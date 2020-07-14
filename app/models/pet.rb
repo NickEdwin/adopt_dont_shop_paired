@@ -9,12 +9,12 @@ class Pet < ApplicationRecord
   has_many :application_pets
   has_many :applications, through: :application_pets
 
-  # def status
-  #   approved_apps = self.application_pets.where(status: "approved")
-  #   if approved_apps.any?
-  #     :pending
-  #   else
-  #     :adoptable
-  #   end
-  # end
+  def status
+    approved_apps = self.application_pets.where(approve: true)
+    if approved_apps.any?
+      :pending
+    else
+      :adoptable
+    end
+  end
 end
