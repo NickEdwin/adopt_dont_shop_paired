@@ -14,7 +14,7 @@ RSpec.describe Application do
     it { should have_many(:pets).through(:application_pets) }
   end
 
-  describe '#approve_app' do
+  describe '#approve_app, #unapprove' do
     it 'can change approved status from the default of false, to true' do
       shelter = Shelter.create(name: "Braun Farm", address: '4242 Farm Rd.', city: 'Eustis', state: 'FL', zip: 33790)
 
@@ -29,6 +29,12 @@ RSpec.describe Application do
       expect(ap.approve).to eq(false)
       ap.approve_app
       expect(ap.approve).to eq(true)
+      ap.unapprove
+      expect(ap.approve).to eq(false)
+      ap.toggle
+      expect(ap.approve).to eq(true)
+      ap.toggle
+      expect(ap.approve).to eq(false)
     end
   end
 
