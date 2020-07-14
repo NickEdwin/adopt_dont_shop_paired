@@ -10,7 +10,7 @@ RSpec.describe "write new review", type: :feature do
     expect(current_path).to eq("/shelters/#{@shelter.id}/reviews/new")
 
     fill_in('title', with: 'Test Review')
-    fill_in('rating', with: '4')
+    select "4", :from => "rating"
     fill_in('content', with: 'Test Content')
     fill_in('picture', with: 'https://petfbi.org/wp-content/uploads/2012/10/dog-shelter.jpg')
 
@@ -29,7 +29,7 @@ RSpec.describe "write new review", type: :feature do
     expect(current_path).to eq("/shelters/#{@shelter.id}/reviews/new")
 
     fill_in('title', with: 'Test Review')
-    fill_in('rating', with: '4')
+    select "4", :from => "rating"
     fill_in('picture', with: 'https://petfbi.org/wp-content/uploads/2012/10/dog-shelter.jpg')
 
     click_on('Save Review')
