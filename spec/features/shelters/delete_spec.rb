@@ -21,7 +21,6 @@ RSpec.describe "destroy existing shelter", type: :feature do
       click_on "Delete"
     end
 
-
-    expect(review.should be_destroyed)
+    expect { review.reload }.to raise_error ActiveRecord::RecordNotFound
   end
 end
