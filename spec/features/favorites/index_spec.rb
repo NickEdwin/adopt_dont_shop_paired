@@ -111,7 +111,6 @@ RSpec.describe "as a visitor", type: :feature do
 
       application1.approve_for(@pet1)
       visit "/favorites"
-      save_and_open_page
 
       within('#list-section') do
         expect(page).to have_content('Noodle')
