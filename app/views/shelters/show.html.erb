@@ -17,6 +17,11 @@
       <%= link_to 'Update', "/shelters/#{@shelter.id}/edit" %>
       <%= link_to 'Delete', "/shelters/#{@shelter.id}", method: :delete %>
     </div>
+    <div id="flash-alert">
+      <% if !!flash[:notice] %>
+        <%= flash[:notice] %>
+      <% end %>
+    </div>
 
   </section>
 

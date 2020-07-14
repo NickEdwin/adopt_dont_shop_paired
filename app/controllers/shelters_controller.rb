@@ -44,12 +44,18 @@ class SheltersController < ApplicationController
   end
 
   def destroy
-    ids_to_delete = Shelter.find(params[:id]).pets.ids
-    ids_to_delete.each do |id|
-      favorite.pets.delete(id)
+    shelter = Shelter.find(params[:id])
+    if shelter.pets.any? { |pet| pet.status == :pending }
+      flash[:notice] = "Shelters with pending applications can't be deleted."
+      redirect_back(fallback_location:"/shelters")
+    else
+      ids_to_delete = shelter.pets.ids
+      ids_to_delete.each do |id|
+        favorite.pets.delete(id)
+      end
+      Shelter.destroy(params[:id])
+      redirect_to "/shelters"
     end
-    Shelter.destroy(params[:id])
-    redirect_to "/shelters"
   end
 
   def pets_index

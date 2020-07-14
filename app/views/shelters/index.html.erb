@@ -7,12 +7,17 @@
   <section id='shelters'>
     <% @alpha_shelters.each do |shelter| %>
         <div class='shelter'>
-          <h4><%= link_to shelter.name, "/shelters/#{shelter.id}", class: 'shelter-name' %></h4>
+          <h4><%= link_to shelter.name, "/shelters/#{shelter.id}", class: 'list-name' %></h4>
           <span class='options'>
             <%= link_to 'Edit', "/shelters/#{shelter.id}/edit" %>
             <span> | </span>
             <%= link_to 'Delete', "/shelters/#{shelter.id}", method: :delete %>
           </span>
+        </div>
+        <div id="flash-alert">
+          <% if !!flash[:notice] %>
+            <%= flash[:notice] %>
+          <% end %>
         </div>
     <% end %>
   </section>

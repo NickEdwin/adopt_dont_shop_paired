@@ -453,7 +453,7 @@ Visitors will have additional constraints when manipulating shelter data in the 
 
 
 ```
-[ ] done
+[X] done
 
 User Story 26, Shelters with Pets that have pending status cannot be Deleted
 
@@ -466,7 +466,7 @@ Either:
 ```
 
 ```
-[/] done
+[X] done
 
 User Story 27, Shelters can be Deleted as long as all pets do not have approved applications on them
 
@@ -478,7 +478,7 @@ Then all of their pets are deleted as well
 ```
 
 ```
-[/] done
+[X] done
 
 User Story 28, Deleting Shelters Deletes its Reviews
 
@@ -532,7 +532,7 @@ Either:
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 32, Deleting a pet removes it from favorites
 
