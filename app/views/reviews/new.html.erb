@@ -12,8 +12,16 @@
       <% end %>
     </div>
     <%= form_tag "/shelters/#{@shelter.id}", class: 'edit-form' do %>
+      <label for="rating">Select a Rating:</label>
+      <select name="rating" id="rating">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select><br><br>
       <%= text_field_tag :title, nil, placeholder: 'Title' %><br>
-      <%= text_field_tag :rating, nil, placeholder: 'Rate Shelter 0-5' %><br>
       <%= text_field_tag :content, nil, placeholder: 'Write your review here.' %><br>
       <%= text_field_tag :picture, nil, placeholder: 'Image URL (optional)' %><br>
       <%= submit_tag 'Save Review', class: 'submit' %>
