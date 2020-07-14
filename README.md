@@ -543,7 +543,7 @@ They are also removed from the favorites list
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 33, Flash Message for Pet Create and Update
 

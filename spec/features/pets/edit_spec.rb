@@ -29,6 +29,5 @@ RSpec.describe "as a visitor", type: :feature do
 
     expect(current_path).to eq("/pets/#{@pet1.id}/edit")
     expect(page).to have_content('Name can\'t be blank')
-
   end
 end
