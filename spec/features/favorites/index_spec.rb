@@ -3,7 +3,6 @@ RSpec.describe "as a visitor", type: :feature do
     @shelter = Shelter.create!({name: "Braun Farm", address: "1234 NW 10th St.", city: "Gainesville", state: "FL", zip: 32609})
     @pet1 = Pet.create(name: 'Noodle', approx_age: 3, sex: "male", description: "description of noodle", image: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001403/Australian-Cattle-Dog-On-White-03.jpg", shelter_id: @shelter.id)
     @pet2 = Pet.create(name: 'Yoda', approx_age: 4, sex: "female", description: "This is a cat.", image: "https://static.toiimg.com/photo/msid-67586673/67586673.jpg?3918697", shelter_id: @shelter.id)
-
   end
 
   describe 'view favorites index' do
@@ -103,6 +102,21 @@ RSpec.describe "as a visitor", type: :feature do
       expect(page).to have_content("#{@pet1.name}")
       expect(page).to have_content("#{@pet2.name}")
       expect(page).to have_content("You have no favorite pets.")
+    end
+
+    it 'shows application status next to Pet name under \'pets with applications\' section' do
+
+      application1 = Application.create!(name: 'Timmy', address: '123 Street St.', city: 'Denver', state: 'CO', zip: '80218', phone_number: '303-123-4567', reason: 'Because I love animals!')
+      ApplicationPet.create!(application_id: application1.id, pet_id: @pet1.id)
+
+      application1.approve_for(@pet1)
+      visit "/favorites"
+      save_and_open_page
+
+      within('#list-section') do
+        expect(page).to have_content('Noodle')
+        expect(page).to have_content('(approved)')
+      end
     end
   end
 end

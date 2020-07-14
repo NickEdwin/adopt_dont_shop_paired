@@ -150,6 +150,18 @@ main {
 	align-content: baseline;
 }
 
+.app-names .options {
+	margin-top: 0px;
+}
+
+.app-names {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0 20px 0px;
+	align-content: baseline;
+}
+
 #pets-index {
   display: flex;
   justify-content: flex-start;
