@@ -13,7 +13,7 @@ RSpec.describe "update an existing review", type: :feature do
   expect(current_path).to eq("/reviews/#{review.id}/edit")
 
   fill_in('title', with: 'Updated Review')
-  fill_in('rating', with: '5')
+  select "5", :from => "rating"
   fill_in('content', with: 'This place rocks!')
   fill_in('picture', with: 'https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg')
 
