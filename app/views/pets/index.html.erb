@@ -2,7 +2,11 @@
   <section class='page-header'>
     <h2 class='page-title'>Pet List</h2>
   </section>
-
+  <div id="flash-alert">
+    <% if !!flash[:notice] %>
+      <%= flash[:notice] %>
+    <% end %>
+  </div>
   <section id='pets-index'>
     <% @pets.each do |pet| %>
       <div class='pet-card'>
