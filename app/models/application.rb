@@ -10,4 +10,23 @@ class Application < ApplicationRecord
   has_many :application_pets
   has_many :pets, through: :application_pets
 
+  def find_app_pet(pet)
+    self.application_pets.where(pet_id: pet.id)
+  end
+
+  def can_approve(pet)
+    if pet.application_pets.where(approve: true) != []
+      false
+    else
+      true
+    end
+  end
+
+  def approve_for(pet)
+    if can_approve(pet)
+      find_app_pet(pet).map do |ap|
+        ap.toggle_status
+      end
+    end
+  end
 end
