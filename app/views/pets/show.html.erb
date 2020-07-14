@@ -10,8 +10,11 @@
   </div>
 
   <div id='on-hold'>
-    <% if @pet.status == "pending" %>
-      <p>This pet is currently on hold for: <%= @applicants.map {|applicant| applicant.name}.pop %></p>
+    <% if @pet.status == :pending %>
+      <% app = @pet.applications.select do |application| %>
+        <% application.find_app_pet(@pet)[0].approve == true %>
+      <% end %>
+      <p>This pet is currently on hold for: <%= app[0].name %> </p>
     <% end %>
   </div>
 

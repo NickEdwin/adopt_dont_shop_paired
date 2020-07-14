@@ -17,7 +17,7 @@
       <p>Select which pet/pets you'd like to apply for:</p><br>
 
       <div class='checkbox'>
-        <%= collection_check_boxes(:applications, :pet_ids, @fav_pet_objects, :id, :name, {include_hidden: false}) %>
+        <%= collection_check_boxes(:application, :pet_ids, @fav_pet_objects, :id, :name, {include_hidden: false}) %>
       </div>
 
       <br><br>

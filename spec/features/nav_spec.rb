@@ -3,7 +3,7 @@ RSpec.describe 'as a visitor' do
     it 'then I see links at the top for pet index and shelter index' do
 
       shelter = Shelter.create!(name: "Braun Farm")
-      pet = Pet.create!(name: 'Noodle', approx_age: 3, sex: "male", image: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001403/Australian-Cattle-Dog-On-White-03.jpg", shelter_id: shelter.id, status: 'adoptable' )
+      pet = Pet.create!(name: 'Noodle', approx_age: 3, sex: "male", image: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001403/Australian-Cattle-Dog-On-White-03.jpg", shelter_id: shelter.id)
 
       visit "/shelters"
       expect(page).to have_link('Pets')

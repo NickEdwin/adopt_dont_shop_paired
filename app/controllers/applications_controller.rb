@@ -11,7 +11,7 @@ class ApplicationsController < ApplicationController
   def create
     application = Application.new(application_params)
 
-    pet_ids = params[:applications][:pet_ids]
+    pet_ids = params[:application][:pet_ids]
 
     if application.save
       pet_ids.each do |id|
@@ -28,7 +28,18 @@ class ApplicationsController < ApplicationController
 
   def show
     @application = Application.find(params[:id])
-    @pets = Pet.find(ApplicationPet.where(application_id: @application.id).pluck(:pet_id))
+  end
+
+  def update
+    application = Application.find(params[:id])
+    pet = Pet.find(params[:pet_id])
+    if application.can_approve(pet)
+      application.approve_for(pet)
+      redirect_to "/pets/#{pet.id}"
+    elsif application.can_unapprove(pet)
+      application.unapprove_for(pet)
+      redirect_to "/applications/#{application.id}"
+    end
   end
 
   private

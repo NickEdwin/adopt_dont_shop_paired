@@ -417,7 +417,7 @@ I'm able to approve the application for any number of pets
 ```
 User Story 24, Pets can only have one approved application on them at any time
 
-[ ] done
+[X] done
 
 As a visitor
 When a pet has more than one application made for them

@@ -3,8 +3,8 @@ RSpec.describe 'as a visitor' do
     it 'then I see each Pet in the system including image, name, approximate age, sex, name of shelter' do
 
       shelter = Shelter.create(name: "Braun Farm")
-      pet1 = Pet.create!(name: 'Noodle', approx_age: 3, sex: "M", image: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001403/Australian-Cattle-Dog-On-White-03.jpg", shelter_id: shelter.id, status: 'adoptable' )
-      pet2 = Pet.create!(name: 'Marley', approx_age: 12, sex: "F", image: "", shelter_id: shelter.id, status: 'adoptable')
+      pet1 = Pet.create!(name: 'Noodle', approx_age: 3, sex: "M", image: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001403/Australian-Cattle-Dog-On-White-03.jpg", shelter_id: shelter.id)
+      pet2 = Pet.create!(name: 'Marley', approx_age: 12, sex: "F", image: "", shelter_id: shelter.id)
 
       visit '/pets'
 

@@ -17,14 +17,16 @@
     <div class='page-header'>
       <h3 class='page-title'>Current Pets Requested</h3>
     </div>
-      <% @pets.each do |pet| %>
+      <% @application.pets.each do |pet| %>
         <div class='pet-list'>
           <h4><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h4>
           <span class='options'>
-            <% if pet.status == 'pending' %>
-              <%= link_to 'Unapprove', "/pets/#{pet.id}?status=adoptable", method: :patch %>
+            <% if @application.can_approve(pet) %>
+              <%= link_to 'Approve', "/applications/#{@application.id}?pet_id=#{pet.id}&approve=true", method: :patch %>
+            <% elsif @application.can_unapprove(pet) %>
+              <%= link_to 'Unapprove', "/applications/#{@application.id}?pet_id=#{pet.id}&approve=false", method: :patch %>
             <% else %>
-              <%= link_to 'Approve', "/pets/#{pet.id}?status=pending", method: :patch %>
+              <span>An application is already pending.</span>
             <% end %>
           </span>
         </div>
