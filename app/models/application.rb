@@ -22,6 +22,12 @@ class Application < ApplicationRecord
     end
   end
 
+  def can_unapprove(pet)
+    find_app_pet(pet).any? do |ap|
+      ap.approve == true
+    end
+  end
+
   def approve_for(pet)
     if can_approve(pet)
       find_app_pet(pet).map do |ap|
@@ -30,9 +36,11 @@ class Application < ApplicationRecord
     end
   end
 
-  def can_unapprove(pet)
-    find_app_pet(pet).any? do |ap|
-      ap.approve == true
-    end
+  def unapprove_for(pet)
+    find_app_pet(pet).map do |ap|
+      ap.toggle_status
+    end 
   end
+
+
 end

@@ -33,8 +33,13 @@ class ApplicationsController < ApplicationController
   def update
     application = Application.find(params[:id])
     pet = Pet.find(params[:pet_id])
-    application.approve_for(pet)
-    redirect_to "/applications/#{params[:id]}"
+    if application.can_approve(pet)
+      application.approve_for(pet)
+      redirect_to "/pets/#{pet.id}"
+    elsif application.can_unapprove(pet)
+      application.unapprove_for(pet)
+      redirect_to "/applications/#{application.id}"
+    end
   end
 
   private
