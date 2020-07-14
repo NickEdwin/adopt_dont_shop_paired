@@ -37,4 +37,7 @@ Rails.application.routes.draw do
   get '/applications', to: 'applications#index'
   get '/applications?pet_id', to: 'applications#index'
 
+  patch '/applications/:id', to: 'applications#update'
+
+
 end

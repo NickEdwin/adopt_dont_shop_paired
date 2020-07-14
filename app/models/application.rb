@@ -29,4 +29,10 @@ class Application < ApplicationRecord
       end
     end
   end
+
+  def can_unapprove(pet)
+    find_app_pet(pet).any? do |ap|
+      ap.approve == true
+    end
+  end
 end
