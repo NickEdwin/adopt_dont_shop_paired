@@ -594,7 +594,7 @@ It is a link to their application show page
 ```
 User Story 37, List of Pets with Approved Applications
 
-[ ] done
+[X] done
 
 As a visitor
 After an application has been approved for one or more pets

@@ -48,6 +48,11 @@
       <% @pets.each do |pet| %>
         <div class='app-names'>
           <h4><%= link_to "#{pet.name}", "/pets/#{pet.id}", class: 'list-name' %></h4>
+          <span class='options'>
+            <% if pet.status == :pending %>
+              <span>(approved)</span>
+            <% end %>
+          </span>
         </div>
       <% end %>
     <% else %>
