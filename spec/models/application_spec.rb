@@ -31,9 +31,9 @@ RSpec.describe Application do
       expect(ap.approve).to eq(true)
       ap.unapprove
       expect(ap.approve).to eq(false)
-      ap.toggle
+      ap.toggle_status
       expect(ap.approve).to eq(true)
-      ap.toggle
+      ap.toggle_status
       expect(ap.approve).to eq(false)
     end
   end
