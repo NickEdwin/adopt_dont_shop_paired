@@ -488,7 +488,7 @@ All reviews associated with that shelter are also deleted
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 29, Flash Messages for Shelter Create and Update
 

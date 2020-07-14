@@ -1,6 +1,6 @@
 RSpec.describe 'as a visitor' do
   before :each do
-    @shelter = Shelter.create(name: "Braun Farm")
+    @shelter = Shelter.create!({name: "Braun Farm", address: "1234 NW 10th St.", city: "Gainesville", state: "FL", zip: 32609})
 
   end
 
