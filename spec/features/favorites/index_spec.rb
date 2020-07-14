@@ -1,8 +1,8 @@
 RSpec.describe "as a visitor", type: :feature do
   before :each do
     @shelter = Shelter.create(name: "Braun Farm")
-    @pet1 = Pet.create(name: 'Noodle', approx_age: 3, sex: "male", description: "description of noodle", image: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001403/Australian-Cattle-Dog-On-White-03.jpg", shelter_id: @shelter.id, status: "adoptable" )
-    @pet2 = Pet.create(name: 'Yoda', approx_age: 4, sex: "female", description: "This is a cat.", image: "https://static.toiimg.com/photo/msid-67586673/67586673.jpg?3918697", shelter_id: @shelter.id, status: "adoptable" )
+    @pet1 = Pet.create(name: 'Noodle', approx_age: 3, sex: "male", description: "description of noodle", image: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001403/Australian-Cattle-Dog-On-White-03.jpg", shelter_id: @shelter.id)
+    @pet2 = Pet.create(name: 'Yoda', approx_age: 4, sex: "female", description: "This is a cat.", image: "https://static.toiimg.com/photo/msid-67586673/67586673.jpg?3918697", shelter_id: @shelter.id)
 
   end
 

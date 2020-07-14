@@ -19,7 +19,7 @@ RSpec.describe Application do
 
       shelter = Shelter.create!(name: "Braun Farm", address: '4242 Farm Rd.', city: 'Eustis', state: 'FL', zip: 33790)
 
-      pet = Pet.create!(name: 'Noodle', approx_age: 3, sex: "male", image: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001403/Australian-Cattle-Dog-On-White-03.jpg", shelter_id: shelter.id, status: 'adoptable' )
+      pet = Pet.create!(name: 'Noodle', approx_age: 3, sex: "male", image: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001403/Australian-Cattle-Dog-On-White-03.jpg", shelter_id: shelter.id)
 
       app1 = Application.create!(name: 'New Application', address: '1234 Tests', city: 'Mayo', state: 'FL', zip: 33499, phone_number: '333444999', reason: 'because')
       app2 = Application.create!(name: 'Newest Application', address: '1234 Specs', city: 'Bronson', state: 'FL', zip: 33499, phone_number: '333444999', reason: 'because')

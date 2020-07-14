@@ -10,7 +10,7 @@
   </div>
 
   <div id='on-hold'>
-    <% if @pet.status == "pending" %>
+    <% if @pet.status == :pending %>
       <p>This pet is currently on hold for: <%= @applicants.map {|applicant| applicant.name}.pop %></p>
     <% end %>
   </div>
