@@ -1,8 +1,8 @@
 RSpec.describe 'As a visitor' do
   it 'see list of pets from specific shelter including each pet image, name, approx age, and sex' do
 
-    shelter = Shelter.create!(name: "Braun Farm")
-    shelter2 = Shelter.create!(name: "Jax Rescue")
+    shelter = Shelter.create!({name: "Braun Farm", address: "1234 NW 10th St.", city: "Gainesville", state: "FL", zip: 32609})
+    shelter2 = Shelter.create!({name: "Jax Rescue", address: "1234 NW 10th St.", city: "Gainesville", state: "FL", zip: 32609})
 
     pet1 = Pet.create!(name: 'Noodle', approx_age: 3, sex: "male", image: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001403/Australian-Cattle-Dog-On-White-03.jpg", shelter_id: shelter.id )
 

@@ -4,8 +4,8 @@
 
 RSpec.describe "visit /shelters index, see all", type: :feature do
   it "list of shelter names" do
-    shelter1 = Shelter.create(name: "Shelter 1")
-    shelter2 = Shelter.create(name: "Shelter 2")
+    shelter1 = Shelter.create!({name: "Braun Farm", address: "1234 NW 10th St.", city: "Gainesville", state: "FL", zip: 32609})
+    shelter2 = Shelter.create!({name: "Shelter For Pets", address: "1234 NW 10th St.", city: "Gainesville", state: "FL", zip: 32609})
 
     visit "/shelters"
 
