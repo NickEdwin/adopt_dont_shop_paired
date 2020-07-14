@@ -543,7 +543,7 @@ They are also removed from the favorites list
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 33, Flash Message for Pet Create and Update
 
@@ -558,7 +558,7 @@ I see a flash message indicating which field(s) I am missing
 Visitors will have additional constraints when manipulating pet data in the database.
 
 ```
-[ ] done
+[X] done
 
 User Story 34, All Pet Names are links to that Pet's Show Page
 
@@ -568,7 +568,7 @@ It is a link to their show page
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 35, All Shelter Names are links to that Shelter's Show Page
 
@@ -578,7 +578,7 @@ It is a link to their show page
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 36, All Applicant Names are links to that Applicant's application
 
