@@ -5,7 +5,7 @@
       <h2 class='page-title'><%= @shelter.name %></h2>
       <div>
         <%= link_to "See Pets (#{@shelter.num_of_pets})", "/shelters/#{@shelter.id}/pets" %>
-        <small><strong><%= @shelter.num_of_applications %></strong> applications on file</small>
+        <small><strong><%= @shelter.num_of_applications %></strong> application(s) on file</small>
       </div>
 
     </section>
@@ -16,7 +16,7 @@
         <%= @shelter.zip %>
       </p>
     </div>
-    
+
     <div>
 
     </div>
