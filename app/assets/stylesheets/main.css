@@ -124,7 +124,10 @@ main {
   padding-bottom: 8px;
 	margin: 10px 0px 20px 0px;
   color: #9900CC;
-  /* border-bottom: 1px solid #ddd; */
+}
+
+.page-header div {
+	text-align: right;
 }
 
 .page-header a, span {
@@ -140,10 +143,12 @@ main {
 }
 
 .page-header small {
-	/* font-style: italic; */
-	font-weight: 200;
-	font-size: .6em;
+	text-align: right;
+	font-size: .8em;
 	opacity: 70%;
+	display: block;
+	margin-top: 10px;
+	color: #777;
 }
 
 .shelter {
