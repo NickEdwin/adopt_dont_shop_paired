@@ -134,6 +134,13 @@ main {
   color: #9900CC;
 }
 
+.page-header .subtitle {
+	display: inline;
+	font-weight: 200;
+	color: #9900CC;
+	font-size: .8em;
+}
+
 .header-options a, span {
 	margin-left: 15px;
 }
