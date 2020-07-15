@@ -377,7 +377,8 @@ main {
 }
 
 #flash-alert {
-	background-color: red;
+	color: red;
+	margin: 10px 0px 20px 0px;
 }
 
 #on-hold {
