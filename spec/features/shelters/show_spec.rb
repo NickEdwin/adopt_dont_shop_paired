@@ -47,7 +47,7 @@ RSpec.describe "visit /shelters/id", type: :feature do
     visit "/shelters/#{@shelter1.id}"
 
     within('#shelter') do
-      expect(page).to have_content("Number of Pets Available: 2")
+      expect(page).to have_content("(2)")
     end
   end
 
@@ -55,13 +55,13 @@ RSpec.describe "visit /shelters/id", type: :feature do
 
     visit "/shelters/#{@shelter1.id}"
 
-      expect(page).to have_content("Average Rating: 2.5/5.0")
+      expect(page).to have_content("average rating: 2.5 / 5.0")
   end
 
   it "number of applications on file for that shelter" do
 
     visit "/shelters/#{@shelter1.id}"
 
-    expect(page).to have_content("Applications on file: 1")
+    expect(page).to have_content("1 application(s) on file")
   end
 end

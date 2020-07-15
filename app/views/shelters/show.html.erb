@@ -3,8 +3,11 @@
   <section id='shelter'>
     <section class='page-header'>
       <h2 class='page-title'><%= @shelter.name %></h2>
-      <p>Number of Pets Available: <%= @shelter.num_of_pets %></p>
-      <%= link_to 'See Pets', "/shelters/#{@shelter.id}/pets" %>
+      <div>
+        <%= link_to "See Pets (#{@shelter.num_of_pets})", "/shelters/#{@shelter.id}/pets" %>
+        <small><strong><%= @shelter.num_of_applications %></strong> application(s) on file</small>
+      </div>
+
     </section>
 
     <div class='text-details'>
@@ -13,9 +16,9 @@
         <%= @shelter.zip %>
       </p>
     </div>
-    <br>
+
     <div>
-  <p>Applications on file: <%= @shelter.num_of_applications %></p>
+
     </div>
     <div class='options'>
       <%= link_to 'Update', "/shelters/#{@shelter.id}/edit" %>
@@ -34,8 +37,12 @@
 
     <div class='page-header'>
       <h3 class='page-title'>Reviews</h3>
-      <p>Average Rating: <%= @shelter.average_rating.round(2) %>/5.0 </p>
-      <%= link_to 'Write Review', "/shelters/#{@shelter.id}/reviews/new" %>
+      <div>
+        <%= link_to 'Write Review', "/shelters/#{@shelter.id}/reviews/new" %>
+        <small>average rating: <strong><%= @shelter.average_rating.round(2) %> / 5.0</strong></small>
+      </div>
+
+
     </div>
 
     <% @reviews.each do |review| %>
