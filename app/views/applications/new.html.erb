@@ -16,11 +16,11 @@
     <%= form_tag "/applications", class: 'edit-form' do %>
       <p>Select which pet/pets you'd like to apply for:</p><br>
 
-      <div class='checkbox'>
-        <%= collection_check_boxes(:application, :pet_ids, @fav_pet_objects, :id, :name, {include_hidden: false}) %>
+      <div id='checkbox'>
+        <%= collection_check_boxes(:application, :pet_ids, @fav_pet_objects, :id, :name, {include_hidden: false}, {class: 'box'}) %>
       </div>
 
-      <br><br>
+      <br>
       <p>Enter your personal information below:</p><br>
       <%= text_field_tag :name, nil, placeholder: 'Name' %><br>
       <%= text_field_tag :address, nil, placeholder: 'Address' %><br>
